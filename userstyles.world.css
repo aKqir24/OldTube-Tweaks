@@ -35,7 +35,7 @@ e "20px" <<<EOT 20px EOT;
 f "25px" <<<EOT 25px EOT;
 }
 
-@var checkbox removeShorts  'Remove The Shorts Section' 1
+@var checkbox removeShorts  'Remove Shorts Section' 1
 @var checkbox compactMenu  'Compact Menu Buttons' 1
 
 ==/UserStyle== */
@@ -205,7 +205,12 @@ if compactMenu{
     ytd-thumbnail.ytd-rich-grid-media, ytd-playlist-thumbnail.ytd-rich-grid-media {
         border-radius: var(--feed-thumbnail-preview) !important
     }
-        
+     
+    /*Channel Banner*/
+    .yt-image-banner-view-model-wiz--inset {
+        border-radius: var(--feed-thumbnail-preview) !important
+    }
+    
     /* Subscribed button */
     #subscribe,
     #subscribe-button {
