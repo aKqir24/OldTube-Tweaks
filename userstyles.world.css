@@ -1,11 +1,11 @@
 /* ==UserStyle==
 @name           OldTube
 @author         aKqir24 <Akqir> (https://github.com/aKqir24)
-@description    Please report bugs via my email, github, discord or the discussion section(If I have some free time, I'll fix them)
+@description    Interface tweaks for an nostalgic experience in youtube...
 @namespace      https://userstyles.world/user/aKqir24
 @homepageURL    https://github.com/aKqir24/OldTube
 @supportURL     https://github.com/aKqir24/OldTube/issues
-@version        1.0.0
+@version        1.0.2
 @license        MIT
 @preprocessor   stylus
 
@@ -36,16 +36,12 @@ f "25px" <<<EOT 25px EOT;
 }
 
 @var checkbox removeShorts  'Remove The Shorts Section' 1
+@var checkbox compactMenu  'Compact Menu Buttons' 1
 
 ==/UserStyle== */
 /*
-Please report bugs via my email, github, discord or the discussion section(If I have some free time, I'll fix them)
-Support me: https://ko-fi.com/sapondanaisriwan 
-Support me: https://ko-fi.com/sapondanaisriwan
-Support me: https://ko-fi.com/sapondanaisriwan
-Support me: https://ko-fi.com/sapondanaisriwan
-Support me: https://ko-fi.com/sapondanaisriwan
-
+Support My Youtube Channel!!
+- https://www.youtube.com/@Akqir
 */
 
 @-moz-document domain("youtube.com") {
@@ -53,14 +49,33 @@ Support me: https://ko-fi.com/sapondanaisriwan
         --sub-red-btn: #CC0000;
         --sub-white--text-btn: #F2F2F2;
         --sub-black-bg-btn: #303030;
-        --round-corner-radius: border-radius;
+        --button-corner-radius: border-radius;
         --corner-radius-video-player: videoPlayerRadius;
         --feed-thumbnail-preview: feedThumbRadius;
         --like-color: lime;
         --dislike-color: red;
     }
 
+/*Side Menu Buttons*/
+if compactMenu{
+    ytd-mini-guide-entry-renderer[system-icons][is-active] .title.ytd-mini-guide-entry-renderer,
+    ytd-mini-guide-entry-renderer[system-icons] .title.ytd-mini-guide-entry-renderer {
+        display: none;
+        
+    }
     
+    ytd-mini-guide-entry-renderer{
+        border-radius: var(--button-corner-radius);
+        width:54px;
+    }
+    
+    a.ytd-mini-guide-entry-renderer {
+        padding: 14px 0px 12px;
+        width: 54px;
+    }
+}
+
+
 /* All Buttons Section */
     /* Subscribed button on channels*/
     /* Please let me know if you can figure out how to make this shorter and cleaner */
@@ -149,11 +164,11 @@ Support me: https://ko-fi.com/sapondanaisriwan
     .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal{
         color: #f1f1f1f0;
         background-color: #272727;
-        border-radius: var(--round-corner-radius);
+        border-radius: var(--button-corner-radius);
     }
     
     .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--tonal{
-        border-radius: var(--round-corner-radius);
+        border-radius: var(--button-corner-radius);
         font-variant-caps: all-petite-caps;
         font-family: "Roboto","Arial",sans-serif;
         font-size: 165%;
@@ -161,12 +176,12 @@ Support me: https://ko-fi.com/sapondanaisriwan
     }
     .smartimation--enable-masking .smartimation__content {
         background-color: #272727; 
-        border-radius: var(--round-corner-radius);
+        border-radius: var(--button-corner-radius);
     }
     
     /*Channel Join Button*/
     .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--outline{
-        border-radius: var(--round-corner-radius);
+        border-radius: var(--button-corner-radius);
         font-variant-caps: all-petite-caps;
     }
     /* Channel Join Button Text*/
@@ -195,14 +210,14 @@ Support me: https://ko-fi.com/sapondanaisriwan
             button,
             a[aria-label="Subscribe"] {
                 /* InPrivate */
-                border-radius: var(--round-corner-radius);
+                border-radius: var(--button-corner-radius);
                 color: var(--yt-spec-static-brand-white) !important;
                 background-color: var(--yt-spec-brand-button-background) !important;
             }
             /* Unsubscribe button */
             button[aria-label^=Unsubscribe],
             button.yt-spec-button-shape-next.yt-spec-button-shape-next--tonal {
-                border-radius: var(--round-corner-radius);
+                border-radius: var(--button-corner-radius);
                 color: var(--yt-spec-text-secondary) !important;
                 background-color: var(--yt-spec-badge-chip-background) !important;
             }
@@ -213,7 +228,7 @@ Support me: https://ko-fi.com/sapondanaisriwan
     html[dark] ytd-shorts #subscribe-button yt-button-shape button {
         &[aria-label^=Unsubscribe],
         &.yt-spec-button-shape-next.yt-spec-button-shape-next--tonal {
-            border-radius: var(--round-corner-radius);
+            border-radius: var(--button-corner-radius);
             background-color: var(--sub-black-bg-btn) !important;
         }
     }
@@ -221,7 +236,7 @@ Support me: https://ko-fi.com/sapondanaisriwan
     html:not([dark]) ytd-shorts #subscribe-button yt-button-shape button {
         &[aria-label^=Unsubscribe],
         &.yt-spec-button-shape-next.yt-spec-button-shape-next--tonal {
-            border-radius: var(--round-corner-radius);
+            border-radius: var(--button-corner-radius);
             background-color: var(--sub-white--text-btn) !important;
         }
     }
@@ -264,7 +279,7 @@ ytd-watch-flexy[rounded-player-large][default-layout] #ytd-player.ytd-watch-flex
 
 /*Border Player Background*/    
 .style-scope ytd-rich-grid-renderer{
-    border-radius: var(--round-corner-radius);
+    border-radius: var(--button-corner-radius);
     color: #2e2e2e
 }
     
