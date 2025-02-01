@@ -17,7 +17,7 @@ d "15px" <<<EOT 15px EOT;
 e "20px" <<<EOT 20px EOT;
 }
 
-@advanced dropdown videoPlayerRadius "Video Player Radius" {
+@advanced dropdown videoPlayerRadius "Player Radius" {
 a "0px*" <<<EOT 0px EOT;
 b "5px" <<<EOT 5px EOT;
 c "10px" <<<EOT 10px EOT;
@@ -26,7 +26,7 @@ e "20px" <<<EOT 20px EOT;
 f "25px" <<<EOT 25px EOT;
 }
 
-@advanced dropdown feedThumbRadius "Feed Thumbnail Radius" {
+@advanced dropdown feedThumbRadius "Thumbnail Radius" {
 a "0px*" <<<EOT 0px EOT;
 b "5px" <<<EOT 5px EOT;
 c "10px" <<<EOT 10px EOT;
@@ -60,18 +60,18 @@ Support My Youtube Channel!!
 if compactMenu{
     ytd-mini-guide-entry-renderer[system-icons][is-active] .title.ytd-mini-guide-entry-renderer,
     ytd-mini-guide-entry-renderer[system-icons] .title.ytd-mini-guide-entry-renderer {
-        display: none;
+        display: none
         
     }
     
     ytd-mini-guide-entry-renderer{
         border-radius: var(--button-corner-radius);
-        width:54px;
+        width:54px
     }
     
     a.ytd-mini-guide-entry-renderer {
         padding: 14px 0px 12px;
-        width: 54px;
+        width: 54px
     }
 }
 
@@ -155,7 +155,7 @@ if compactMenu{
             &[aria-label^="Tilaa"],
             &[aria-label^="Subskrybuj kanał"] {
                 color: var(--yt-spec-static-brand-white) !important;
-                background-color: var(--yt-spec-brand-button-background) !important;
+                background-color: var(--yt-spec-brand-button-background) !important
             }
         }
     }
@@ -164,7 +164,12 @@ if compactMenu{
     .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal{
         color: #f1f1f1f0;
         background-color: #272727;
-        border-radius: var(--button-corner-radius);
+        border-radius: var(--button-corner-radius)
+    }
+    
+    /*Channel Join Button*/
+    .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled {
+        border-radius: var(--button-corner-radius)
     }
     
     .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--tonal{
@@ -172,33 +177,33 @@ if compactMenu{
         font-variant-caps: all-petite-caps;
         font-family: "Roboto","Arial",sans-serif;
         font-size: 165%;
-        font-weight: bold;
+        font-weight: bold
     }
     .smartimation--enable-masking .smartimation__content {
         background-color: #272727; 
-        border-radius: var(--button-corner-radius);
+        border-radius: var(--button-corner-radius)
     }
     
     /*Channel Join Button*/
     .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--outline{
         border-radius: var(--button-corner-radius);
-        font-variant-caps: all-petite-caps;
+        font-variant-caps: all-petite-caps
     }
     /* Channel Join Button Text*/
     .yt-spec-button-shape-next{
-        font-variant-caps: all-petite-caps;
+        font-variant-caps: all-petite-caps
     }
     
     /*Channel Subscribe Button*/
     .yt-subscribe-button-view-model-wiz{
-        margin: 0px;
+        margin: 0px
     }
     
     /* Feed Thumbnail*/
     .ytd-thumbnail,
     .ytd-thumbnail[size="large"] a.ytd-thumbnail, ytd-thumbnail[size="large"]::before,
     ytd-thumbnail.ytd-rich-grid-media, ytd-playlist-thumbnail.ytd-rich-grid-media {
-        border-radius: var(--feed-thumbnail-preview) !important;
+        border-radius: var(--feed-thumbnail-preview) !important
     }
         
     /* Subscribed button */
@@ -212,14 +217,14 @@ if compactMenu{
                 /* InPrivate */
                 border-radius: var(--button-corner-radius);
                 color: var(--yt-spec-static-brand-white) !important;
-                background-color: var(--yt-spec-brand-button-background) !important;
+                background-color: var(--yt-spec-brand-button-background) !important
             }
             /* Unsubscribe button */
             button[aria-label^=Unsubscribe],
             button.yt-spec-button-shape-next.yt-spec-button-shape-next--tonal {
                 border-radius: var(--button-corner-radius);
                 color: var(--yt-spec-text-secondary) !important;
-                background-color: var(--yt-spec-badge-chip-background) !important;
+                background-color: var(--yt-spec-badge-chip-background) !important
             }
         }
     }
@@ -229,7 +234,7 @@ if compactMenu{
         &[aria-label^=Unsubscribe],
         &.yt-spec-button-shape-next.yt-spec-button-shape-next--tonal {
             border-radius: var(--button-corner-radius);
-            background-color: var(--sub-black-bg-btn) !important;
+            background-color: var(--sub-black-bg-btn) !important
         }
     }
 
@@ -237,7 +242,7 @@ if compactMenu{
         &[aria-label^=Unsubscribe],
         &.yt-spec-button-shape-next.yt-spec-button-shape-next--tonal {
             border-radius: var(--button-corner-radius);
-            background-color: var(--sub-white--text-btn) !important;
+            background-color: var(--sub-white--text-btn) !important
         }
     }
 
@@ -261,13 +266,18 @@ ytd-watch-metadata[title-headline-xs] h1.ytd-watch-metadata {
   padding-top: 15px;
 }
 
+ytd-miniplayer[inset-progress-bar] #modern-card.ytd-miniplayer, 
+ytd-miniplayer[permanent-info-bar] #modern-card.ytd-miniplayer,
+ytd-miniplayer[expand-animation-enabled] #modern-card.ytd-miniplayer {
+    border-radius: var(--corner-radius-video-player);
+}
+
 /* Remove The Shorts Suggestion*/
 if removeShorts{
     ytd-exploratory-results-renderer.ytd-item-section-renderer, 
     ytd-horizontal-card-list-renderer.ytd-item-section-renderer:not(:first-child), 
-    ytd-reel-shelf-renderer.ytd-item-section-renderer, 
-    ytd-shelf-renderer.ytd-item-section-renderer {
-        display:none;
+    ytd-reel-shelf-renderer.ytd-item-section-renderer {
+        display: none
     }
 }
 
@@ -282,4 +292,3 @@ ytd-watch-flexy[rounded-player-large][default-layout] #ytd-player.ytd-watch-flex
     border-radius: var(--button-corner-radius);
     color: #2e2e2e
 }
-    
