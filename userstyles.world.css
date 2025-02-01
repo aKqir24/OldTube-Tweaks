@@ -5,7 +5,7 @@
 @namespace      https://userstyles.world/user/aKqir24
 @homepageURL    https://github.com/aKqir24/OldTube
 @supportURL     https://github.com/aKqir24/OldTube/issues
-@version        1.0.2
+@version        1.0.3
 @license        MIT
 @preprocessor   stylus
 
@@ -271,10 +271,16 @@ ytd-watch-metadata[title-headline-xs] h1.ytd-watch-metadata {
   padding-top: 15px;
 }
 
+/*Mini Player
 ytd-miniplayer[inset-progress-bar] #modern-card.ytd-miniplayer, 
 ytd-miniplayer[permanent-info-bar] #modern-card.ytd-miniplayer,
 ytd-miniplayer[expand-animation-enabled] #modern-card.ytd-miniplayer {
     border-radius: var(--corner-radius-video-player);
+}
+
+/*End Screen */
+.ytp-videowall-still-round-medium .ytp-videowall-still-image {
+    border-radius: var(--feed-thumbnail-preview);
 }
 
 /* Remove The Shorts Suggestion*/
