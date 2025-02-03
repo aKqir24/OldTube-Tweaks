@@ -1,7 +1,7 @@
 # OLDTUBE
 Interface tweaks for an nostalgic experience in youtube... ( **[Install Here!!](https://userstyles.world/style/20617/oldtube)** )
 
-## FEATURES
+- ## FEATURES
    - Old Subscribe Button
    - Border Radius Adjustment For Every Corner
    - Compact Menu Buttons
