@@ -5,7 +5,7 @@
 @namespace      https://userstyles.world/user/aKqir24
 @homepageURL    https://github.com/aKqir24/OldTube
 @supportURL     https://github.com/aKqir24/OldTube/issues
-@version        1.0.7
+@version        1.0.8
 @license        MIT
 @preprocessor   stylus
 
@@ -292,12 +292,13 @@ if compactMenu{
     }
 
     /* Remove The Shorts Suggestion*/
-    if removeShorts{
+    if removeShorts {
+        ytd-rich-shelf-renderer[standard-shelf-margins][is-shorts][is-show-more-hidden][is-show-less-hidden][is-truncated] #dismissible.ytd-rich-shelf-renderer,
         ytd-exploratory-results-renderer.ytd-item-section-renderer, 
         ytd-horizontal-card-list-renderer.ytd-item-section-renderer:not(:first-child), 
         ytd-reel-shelf-renderer.ytd-item-section-renderer {
             display: none
-        }
+        }  
     }
     
     /*Remove The Border Radius Of the Player*/
