@@ -175,7 +175,13 @@ if compactMenu{
         border-radius: var(--button-corner-radius);
         text-transform: uppercase
     }
-
+    
+    /* Suggestion Buttons */
+    yt-chip-cloud-chip-renderer[chip-style="STYLE_DEFAULT"] #chip-container.yt-chip-cloud-chip-renderer,
+    yt-chip-cloud-chip-renderer[chip-style="STYLE_HOME_FILTER"] #chip-container.yt-chip-cloud-chip-renderer {
+        border-radius: var(--button-corner-radius)
+    }
+        
     /* Channel Join Button Text*/
     .yt-spec-button-shape-next{ text-transform: uppercase }
     
@@ -205,9 +211,11 @@ if compactMenu{
         border-radius: var(--search-box-radius)
     }
     
-    .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-leading .yt-spec-button-shape-next__icon {
-        margin: 0px;
-    }
+        .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-leading .yt-spec-button-shape-next__icon {
+            margin: 0px;
+        }
+    
+    #contents.ytd-rich-grid-renderer { margin-top: -18px }
     
     if oldSubscribe {
     /* Subscribed button */
