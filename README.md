@@ -8,7 +8,7 @@ Interface tweaks for an nostalgic experience in youtube... [![Install Directly W
    - Custom Progressbar Color
    - Uppercased Button Font ( For Better View )
    - Shorts Section Toggle
-   - Old Padding & MArgins
+   - Old Padding & Margins
 
 ## SCREENSHOTS
 | **VIDEO PLAYER**                                                                                               | **FEED**                                                                                                       |
