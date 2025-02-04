@@ -5,7 +5,7 @@
 @namespace      https://userstyles.world/user/aKqir24
 @homepageURL    https://github.com/aKqir24/OldTube
 @supportURL     https://github.com/aKqir24/OldTube/issues
-@version        1.0.8
+@version        1.0.9
 @license        MIT
 @preprocessor   stylus
 
@@ -48,7 +48,7 @@ Support My Youtube Channel!!
 /*Side Menu Buttons*/
 if compactMenu{
     ytd-mini-guide-entry-renderer[system-icons][is-active] .title.ytd-mini-guide-entry-renderer,
-    ytd-mini-guide-entry-renderer[system-icons] .title.ytd-mini-guide-entry-renderer {
+    ytd-mini-guide-entry-renderer[system-icons] .title.ytd-mini-guide-entry-renderer { 
         display: none 
     }
     
@@ -181,6 +181,7 @@ if compactMenu{
     yt-chip-cloud-chip-renderer[chip-style="STYLE_HOME_FILTER"] #chip-container.yt-chip-cloud-chip-renderer {
         border-radius: var(--button-corner-radius)
     }
+        #scroll-container.ytd-feed-filter-chip-bar-renderer { margin-left: -12px }
         
     /* Channel Join Button Text*/
     .yt-spec-button-shape-next{ text-transform: uppercase }
@@ -195,12 +196,26 @@ if compactMenu{
     ytd-thumbnail.ytd-rich-grid-media, ytd-playlist-thumbnail.ytd-rich-grid-media {
         border-radius: var(--feed-thumbnail-preview) !important
     }
-    
-    /* Menu Text Underline */
+        /* Grid Wrapper */
+        #contents.ytd-rich-grid-renderer { margin-top: -18px; margin-right: -0px; width: 102% }
+
+    /* Side Menu */
     .yt-simple-endpoint,
      #endpoint.yt-simple-endpoint.ytd-guide-entry-renderer {
         color: transparent
     }
+    
+        ytd-mini-guide-renderer.ytd-app {
+            padding: 5px;
+            margin-right: -100px;
+            width: 65px
+        }
+        
+        #items.ytd-mini-guide-renderer {
+            align-items: center;
+            margin: 0px;
+            width: 55px
+        }
     
     /*Channel Banner*/
     .yt-image-banner-view-model-wiz--inset { border-radius: var(--feed-thumbnail-preview) !important }
@@ -212,10 +227,10 @@ if compactMenu{
     }
     
         .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-leading .yt-spec-button-shape-next__icon {
-            margin: 0px;
+            margin: 0px
         }
     
-    #contents.ytd-rich-grid-renderer { margin-top: -18px }
+
     
     if oldSubscribe {
     /* Subscribed button */
