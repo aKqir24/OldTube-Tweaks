@@ -5,7 +5,7 @@
 @namespace      https://userstyles.world/user/aKqir24
 @homepageURL    https://github.com/aKqir24/OldTube
 @supportURL     https://github.com/aKqir24/OldTube/issues
-@version        1.0.6
+@version        1.0.7
 @license        MIT
 @preprocessor   stylus
 
@@ -13,13 +13,14 @@
 @var number buttonRadius "Button Corner" [5, 0, 20, 5, "px"]
 @var number videoPlayerRadius "Player Corner" [0, 0, 20, 5, "px"]
 @var number searchBoxRadius "Search Corner" [0, 0, 20, 5, "px"]
+@var range videoCardThumbnail "Video Cards" [1, 0, 10, 1, "px"]
 
 @var checkbox oldSubscribe 'Old Subscribe' 1
 @var checkbox removeShorts  'Remove Shorts' 1
 @var checkbox compactMenu  'Compact Menu' 1
 
 
-@var color progressColor 'Progressbar Color' red
+@var color progressColor 'Progressbar Color' #CC0000
 ==/UserStyle== */
 
 /* TO BE ADDED */
@@ -32,17 +33,17 @@ Support My Youtube Channel!!
 
 @-moz-document domain("youtube.com") {
     :root {
-        --sub-red-btn: progressColor; /*#CC0000;*/
-        --yt-spec-brand-button-background: progressColor;
-        --sub-white--text-btn: #F2F2F2;
         --sub-black-bg-btn: #303030;
+        --sub-white--text-btn: #F2F2F2;
         --button-corner-radius: buttonRadius;
+        --yt-spec-brand-button-background: progressColor;
         --corner-radius-video-player: videoPlayerRadius;
         --feed-thumbnail-preview: feedThumbRadius;
-        --progressbar-color: progressColor;
+        --video-card-preview: videoCardThumbnail;
         --search-box-radius: searchBoxRadius;
-        --like-color: lime;
+        --progressbar-color: progressColor;
         --dislike-color: red;
+        --like-color: lime;
     }
 
 /*Side Menu Buttons*/
@@ -211,6 +212,10 @@ if compactMenu{
         border-radius: var(--search-box-radius)
     }
     
+    .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-leading .yt-spec-button-shape-next__icon {
+        margin: 0px;
+    }
+    
     if oldSubscribe {
     /* Subscribed button */
         #subscribe,
@@ -268,7 +273,7 @@ if compactMenu{
         -webkit-box-orient: vertical;
         text-overflow: ellipsis;
         white-space: normal;
-        padding-top: 15px;
+        padding-top: 5px;
     }
 
     /*Mini Player*/
@@ -316,4 +321,13 @@ if compactMenu{
     /* Remove the gradient and set a solid color */
     .ytp-cairo-refresh .ytp-swatch-background-color {
         background-color: var(--progressbar-color) !important;
+    }
+    
+    .ytp-scrubber-button {
+    -webkit-transition: -webkit-transform .1s cubic-bezier(.4,0,1,1);
+    }
+    
+    #dismissible.ytd-compact-video-renderer {
+        margin-bottom: var(--video-card-preview);
+        margin-left: 2px
     }
