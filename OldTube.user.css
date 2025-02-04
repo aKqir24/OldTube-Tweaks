@@ -316,6 +316,7 @@ if compactMenu{
         ytd-rich-shelf-renderer[standard-shelf-margins][is-shorts][is-show-more-hidden][is-show-less-hidden][is-truncated] #dismissible.ytd-rich-shelf-renderer,
         ytd-exploratory-results-renderer.ytd-item-section-renderer, 
         ytd-horizontal-card-list-renderer.ytd-item-section-renderer:not(:first-child), 
+        ytd-rich-shelf-renderer[standard-shelf-margins] #dismissible.ytd-rich-shelf-renderer,
         ytd-reel-shelf-renderer.ytd-item-section-renderer {
             display: none
         }  
