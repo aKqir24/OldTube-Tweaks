@@ -19,7 +19,6 @@
 @var checkbox removeShorts  'Remove Shorts' 1
 @var checkbox compactMenu  'Compact Menu' 1
 
-
 @var color progressColor 'Progressbar Color' #CC0000
 ==/UserStyle== */
 
@@ -277,6 +276,10 @@ if compactMenu{
     }
 
     /*Mini Player*/
+    #modern-card.ytd-miniplayer,
+    .ytp-player-minimized .html5-main-video, 
+    .ytp-player-minimized .ytp-miniplayer-scrim, 
+    .ytp-player-minimized.html5-video-player:not(.ytp-modern-miniplayer)
     ytd-miniplayer[inset-progress-bar] #modern-card.ytd-miniplayer, 
     ytd-miniplayer[permanent-info-bar] #modern-card.ytd-miniplayer,
     ytd-miniplayer[expand-animation-enabled] #modern-card.ytd-miniplayer {
