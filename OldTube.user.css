@@ -5,7 +5,7 @@
 @namespace      https://userstyles.world/user/aKqir24
 @homepageURL    https://github.com/aKqir24/OldTube
 @supportURL     https://github.com/aKqir24/OldTube/issues
-@version        1.0.9
+@version        1.1.0
 @license        MIT
 @preprocessor   stylus
 
@@ -13,7 +13,7 @@
 @var number buttonRadius "Button Corner" [5, 0, 20, 5, "px"]
 @var number videoPlayerRadius "Player Corner" [0, 0, 20, 5, "px"]
 @var number searchBoxRadius "Search Corner" [0, 0, 20, 5, "px"]
-@var range videoCardThumbnail "Video Cards" [1, 0, 10, 1, "px"]
+@var range videoCardThumbnail "Video Card Spacing" [1, 0, 10, 1, "px"]
 
 @var checkbox oldSubscribe 'Old Subscribe' 1
 @var checkbox removeShorts  'Remove Shorts' 1
@@ -302,7 +302,7 @@ if compactMenu{
     ytd-miniplayer[expand-animation-enabled] #modern-card.ytd-miniplayer {
         border-radius: var(--corner-radius-video-player)
     }
-    
+
         #dismissible.ytd-compact-video-renderer {
             margin-bottom: var(--video-card-preview);
             margin-left: 2px
@@ -323,7 +323,10 @@ if compactMenu{
     
     /*Remove The Border Radius Of the Player*/
     .html5-video-player, 
-    ytd-watch-flexy[rounded-player-large][default-layout] #ytd-player.ytd-watch-flexy { border-radius: var(--corner-radius-video-player) }
+    ytd-watch-flexy[rounded-player-large][default-layout] #ytd-player.ytd-watch-flexy { 
+        border-radius: var(--corner-radius-video-player);
+        left: -1px
+    }
 
     /*Border Player Background*/    
     .style-scope ytd-rich-grid-renderer{
