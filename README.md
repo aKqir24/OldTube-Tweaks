@@ -1,5 +1,5 @@
 # OLDTUBE
-Interface tweaks for an nostalgic experience in youtube... [![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-238b8b.svg)](MY.USER.CSS)
+Interface tweaks for an nostalgic experience in youtube... [![Install Directly With Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-238b8b.svg)](https://raw.githubusercontent.com/aKqir24/OldTube/master/OldTube.user.css)
 
 - ## FEATURES
    - Old Subscribe Button
