@@ -49,8 +49,7 @@ Support My Youtube Channel!!
 if compactMenu{
     ytd-mini-guide-entry-renderer[system-icons][is-active] .title.ytd-mini-guide-entry-renderer,
     ytd-mini-guide-entry-renderer[system-icons] .title.ytd-mini-guide-entry-renderer {
-        display: none
-        
+        display: none 
     }
     
     ytd-mini-guide-entry-renderer{
@@ -157,10 +156,7 @@ if compactMenu{
     }
     
     /*Channel Join Button*/
-    .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled {
-        border-radius: var(--button-corner-radius);
-    }
-    
+    .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled { border-radius: var(--button-corner-radius) }
         .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--tonal{
             border-radius: var(--button-corner-radius);
             text-transform: uppercase;
@@ -197,13 +193,11 @@ if compactMenu{
     /* Menu Text Underline */
     .yt-simple-endpoint,
      #endpoint.yt-simple-endpoint.ytd-guide-entry-renderer {
-        color: transparent;
+        color: transparent
     }
     
     /*Channel Banner*/
-    .yt-image-banner-view-model-wiz--inset {
-        border-radius: var(--feed-thumbnail-preview) !important
-    }
+    .yt-image-banner-view-model-wiz--inset { border-radius: var(--feed-thumbnail-preview) !important }
     
     /* Search Box */
     .ytSearchboxComponentInputBoxDark,
@@ -272,7 +266,7 @@ if compactMenu{
         -webkit-box-orient: vertical;
         text-overflow: ellipsis;
         white-space: normal;
-        padding-top: 5px;
+        padding-top: 5px
     }
 
     /*Mini Player*/
@@ -283,13 +277,16 @@ if compactMenu{
     ytd-miniplayer[inset-progress-bar] #modern-card.ytd-miniplayer, 
     ytd-miniplayer[permanent-info-bar] #modern-card.ytd-miniplayer,
     ytd-miniplayer[expand-animation-enabled] #modern-card.ytd-miniplayer {
-        border-radius: var(--corner-radius-video-player);
+        border-radius: var(--corner-radius-video-player)
     }
-
+    
+        #dismissible.ytd-compact-video-renderer {
+            margin-bottom: var(--video-card-preview);
+            margin-left: 2px
+        }
+        
     /*End Screen */
-    .ytp-videowall-still-round-medium .ytp-videowall-still-image {
-        border-radius: var(--feed-thumbnail-preview);
-    }
+    .ytp-videowall-still-round-medium .ytp-videowall-still-image { border-radius: var(--feed-thumbnail-preview) }
 
     /* Remove The Shorts Suggestion*/
     if removeShorts {
@@ -303,9 +300,7 @@ if compactMenu{
     
     /*Remove The Border Radius Of the Player*/
     .html5-video-player, 
-    ytd-watch-flexy[rounded-player-large][default-layout] #ytd-player.ytd-watch-flexy {
-        border-radius: var(--corner-radius-video-player);
-    }
+    ytd-watch-flexy[rounded-player-large][default-layout] #ytd-player.ytd-watch-flexy { border-radius: var(--corner-radius-video-player) }
 
     /*Border Player Background*/    
     .style-scope ytd-rich-grid-renderer{
@@ -314,24 +309,7 @@ if compactMenu{
     }
 
     /* Change Progressbar*/
-    .ytp-play-progress {
-        background-color: var(--progressbar-color) !important;
-    }
-
-    .ytp-cairo-refresh-signature-moments .ytp-play-progress {
-        background: var(--progressbar-color) !important;
-    }
-
-    /* Remove the gradient and set a solid color */
-    .ytp-cairo-refresh .ytp-swatch-background-color {
-        background-color: var(--progressbar-color) !important;
-    }
-    
-    .ytp-scrubber-button {
-    -webkit-transition: -webkit-transform .1s cubic-bezier(.4,0,1,1);
-    }
-    
-    #dismissible.ytd-compact-video-renderer {
-        margin-bottom: var(--video-card-preview);
-        margin-left: 2px
-    }
+    .ytp-play-progress { background-color: var(--progressbar-color) !important }
+    .ytp-cairo-refresh-signature-moments .ytp-play-progress { background: var(--progressbar-color) !important }
+    .ytp-cairo-refresh .ytp-swatch-background-color { background-color: var(--progressbar-color) !important }
+    .ytp-scrubber-button { -webkit-transition: -webkit-transform .1s cubic-bezier(.4,0,1,1) }
