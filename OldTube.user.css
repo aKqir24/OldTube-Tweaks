@@ -5,11 +5,11 @@
 @namespace      https://userstyles.world/user/aKqir24
 @homepageURL    https://github.com/aKqir24/OldTube
 @supportURL     https://github.com/aKqir24/OldTube/issues
-@version        1.1.2
+@version        1.1.4
 @license        MIT
 @preprocessor   stylus
 
-@var number feedThumbRadius "Thumbnail Corner" [5, 0, 20, 5, "px"]
+@var number feedThumbRadius "Thumbnail Corner" [0, 0, 20, 5, "px"]
 @var number buttonRadius "Button Corner" [5, 0, 20, 5, "px"]
 @var number videoPlayerRadius "Player Corner" [0, 0, 20, 5, "px"]
 @var number searchBoxRadius "Search Corner" [0, 0, 20, 5, "px"]
@@ -61,12 +61,18 @@ if compactMenu{
 
 /* All Buttons Section */
     /* Like, Dislike, And More Button*/
-    .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal{
-        color: #f1f1f1f0;
-        background-color: #272727;
+    .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
+        color: var(--yt-spec-text-primary);
+        background-color: var(--yt-emoji-picker-variant-selector-bg-color);
         border-radius: var(--button-corner-radius)
     }
     
+    /*
+    --yt-spec-general-background-b 
+    --yt-spec-button-chip-background-hover: rgba(0,0,0,0.1);
+    --yt-spec-filled-button-text
+    */
+        
         .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-leading .yt-spec-button-shape-next__icon,
         .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-leading .yt-spec-button-shape-next__icon { 
             padding-right: 3px;
@@ -84,7 +90,7 @@ if compactMenu{
         }
     
         .smartimation--enable-masking .smartimation__content {
-            background-color: #272727; 
+            background-color: var(--yt-emoji-picker-variant-selector-bg-color);
             border-radius: var(--button-corner-radius)
         }
     
@@ -142,9 +148,7 @@ if compactMenu{
         border-radius: var(--search-box-radius)
     }
     
-        .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-leading .yt-spec-button-shape-next__icon {
-            margin: 0px
-        }
+        .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-leading .yt-spec-button-shape-next__icon { margin: 0px }
     
     if oldSubscribe {
     /* Subscribed button */
@@ -214,7 +218,7 @@ if compactMenu{
     ytd-miniplayer[inset-progress-bar] #modern-card.ytd-miniplayer, 
     ytd-miniplayer[permanent-info-bar] #modern-card.ytd-miniplayer,
     ytd-miniplayer[expand-animation-enabled] #modern-card.ytd-miniplayer {
-        border-radius: var(--corner-radius-video-player)
+        border-radius: var(--corner-radius-video-player);
     }
 
         #dismissible.ytd-compact-video-renderer {
@@ -224,14 +228,19 @@ if compactMenu{
         
     /*End Screen */
     .ytp-videowall-still-round-medium .ytp-videowall-still-image { border-radius: var(--feed-thumbnail-preview) }
-
+    .html5-endscreen { margin-top: 12px }
+        
     /* Remove The Shorts Suggestion*/
     if removeShorts {
         ytd-rich-shelf-renderer[standard-shelf-margins][is-shorts][is-show-more-hidden][is-show-less-hidden][is-truncated] #dismissible.ytd-rich-shelf-renderer,
         ytd-exploratory-results-renderer.ytd-item-section-renderer, 
         ytd-horizontal-card-list-renderer.ytd-item-section-renderer:not(:first-child), 
         ytd-rich-shelf-renderer[standard-shelf-margins] #dismissible.ytd-rich-shelf-renderer,
-        ytd-reel-shelf-renderer.ytd-item-section-renderer { display: none }  
+        ytd-reel-shelf-renderer.ytd-item-section-renderer {
+            display: none;
+            margin: 0px;
+            padding: 0px
+        }  
     }
     
     /*Remove The Border Radius Of the Player*/
@@ -252,11 +261,3 @@ if compactMenu{
     .ytp-cairo-refresh-signature-moments .ytp-play-progress { background: var(--progressbar-color) !important }
     .ytp-cairo-refresh .ytp-swatch-background-color { background-color: var(--progressbar-color) !important }
     .ytp-scrubber-button { -webkit-transition: -webkit-transform .1s cubic-bezier(.4,0,1,1) }
-    
-    /*Main Player*/
-    .video-stream { width: 10px }
-    ytd-watch-flexy[flexy] #secondary.ytd-watch-flexy { width: 32% }
-    ytd-watch-flexy[flexy][is-two-columns_][is-extra-wide-video_]:not([full-bleed-player][full-bleed-no-max-width-columns]):not([fixed-panels]) #primary.ytd-watch-flexy, ytd-watch-flexy[flexy][is-two-columns_][is-four-three-to-sixteen-nine-video_]:not([full-bleed-player][full-bleed-no-max-width-columns]):not([fixed-panels]) #primary.ytd-watch-flexy {
-        max-width: 100%;
-        min-width: 0%;
-    }   
