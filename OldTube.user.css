@@ -120,6 +120,9 @@ if compactMenu{
     /*Channel Subscribe Button*/
     .yt-subscribe-button-view-model-wiz{ margin: 0px }
     
+    /* Record Voice Button */
+    #voice-search-button.ytd-masthead { margin-right: 10px }
+    
 /* Feed Section*/
     /* Thumbnail */
     .ytd-thumbnail,
