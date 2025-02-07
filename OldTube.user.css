@@ -9,10 +9,10 @@
 @license        MIT
 @preprocessor   stylus
 
-@var number feedThumbRadius "Thumbnail Corner" [0, 0, 20, 5, "px"]
+
+@var number descriptionRadius "Description Corner" [0, 0, 20, 5, "px"]
+@var number feedVideoRadius "Video Corner" [0, 0, 20, 5, "px"]
 @var number buttonRadius "Button Corner" [0, 0, 20, 5, "px"]
-@var number descriptionRadius "Button Corner" [0, 0, 20, 5, "px"]
-@var number videoPlayerRadius "Player Corner" [0, 0, 20, 5, "px"]
 @var number searchBoxRadius "Search Corner" [0, 0, 20, 5, "px"]
 @var range videoCardThumbnail "Video Card Spacing" [1, 0, 10, 1, "px"]
 
@@ -35,9 +35,9 @@
         --sub-white--text-btn: #F2F2F2;
         --button-corner-radius: buttonRadius;
         --yt-spec-brand-button-background: progressColor;
-        --corner-radius-video-player: videoPlayerRadius;
+        --corner-radius-video-player: feedVideoRadius;
         --description-corner: descriptionRadius;
-        --feed-thumbnail-preview: feedThumbRadius;
+        --feed-thumbnail-preview: feedVideoRadius;
         --video-card-preview: videoCardThumbnail;
         --search-box-radius: searchBoxRadius;
         --progressbar-color: progressColor;
@@ -79,12 +79,6 @@ if compactMenu{
             -webkit-mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
             mask-composite: add, add;
         }
-        
-    /*
-    --yt-spec-general-background-b 
-    --yt-spec-button-chip-background-hover: rgba(0,0,0,0.1);
-    --yt-spec-filled-button-text
-    */
         
         .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-leading .yt-spec-button-shape-next__icon,
         .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-leading .yt-spec-button-shape-next__icon { 
@@ -249,15 +243,13 @@ if compactMenu{
         ytd-exploratory-results-renderer.ytd-item-section-renderer, 
         ytd-horizontal-card-list-renderer.ytd-item-section-renderer:not(:first-child), 
         ytd-rich-shelf-renderer[standard-shelf-margins] #dismissible.ytd-rich-shelf-renderer,
-        ytd-reel-shelf-renderer.ytd-item-section-renderer {
-            display: none;
-            margin: 0px;
-            padding: 0px
-        }  
+        ytd-reel-shelf-renderer.ytd-item-section-renderer { display: none; margin: 0px; padding: 0px }  
     }
     
-    /* Description */
-    ytd-watch-metadata[description-collapsed] #description.ytd-watch-metadata { border-radius: var(--description-corner) }
+    /* Description & Chat */
+    ytd-watch-metadata[description-collapsed] #description.ytd-watch-metadata,
+    ytd-watch-flexy[flexy][js-panel-height_]:not([fixed-panels]) #chat.ytd-watch-flexy:not([collapsed]),
+    .ytVideoMetadataCarouselViewModelHost { border-radius: var(--description-corner) }
     
     /*Remove The Border Radius Of the Player*/
     .html5-video-player, 
@@ -267,10 +259,7 @@ if compactMenu{
     }
 
     /*Border Player Background*/    
-    .style-scope ytd-rich-grid-renderer{
-        border-radius: var(--button-corner-radius);
-        color: #2e2e2e
-    }
+    .style-scope ytd-rich-grid-renderer{ border-radius: var(--button-corner-radius); color: #2e2e2e }
 
     /* Change Progressbar*/
     .ytp-play-progress { background-color: var(--progressbar-color) !important }
