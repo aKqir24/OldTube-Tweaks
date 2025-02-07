@@ -10,7 +10,8 @@
 @preprocessor   stylus
 
 @var number feedThumbRadius "Thumbnail Corner" [0, 0, 20, 5, "px"]
-@var number buttonRadius "Button Corner" [5, 0, 20, 5, "px"]
+@var number buttonRadius "Button Corner" [0, 0, 20, 5, "px"]
+@var number descriptionRadius "Button Corner" [0, 0, 20, 5, "px"]
 @var number videoPlayerRadius "Player Corner" [0, 0, 20, 5, "px"]
 @var number searchBoxRadius "Search Corner" [0, 0, 20, 5, "px"]
 @var range videoCardThumbnail "Video Card Spacing" [1, 0, 10, 1, "px"]
@@ -35,6 +36,7 @@
         --button-corner-radius: buttonRadius;
         --yt-spec-brand-button-background: progressColor;
         --corner-radius-video-player: videoPlayerRadius;
+        --description-corner: descriptionRadius;
         --feed-thumbnail-preview: feedThumbRadius;
         --video-card-preview: videoCardThumbnail;
         --search-box-radius: searchBoxRadius;
@@ -253,6 +255,9 @@ if compactMenu{
             padding: 0px
         }  
     }
+    
+    /* Description */
+    ytd-watch-metadata[description-collapsed] #description.ytd-watch-metadata { border-radius: var(--description-corner) }
     
     /*Remove The Border Radius Of the Player*/
     .html5-video-player, 
