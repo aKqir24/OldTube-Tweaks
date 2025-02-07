@@ -5,7 +5,7 @@
 @namespace      https://userstyles.world/user/aKqir24
 @homepageURL    https://github.com/aKqir24/OldTube
 @supportURL     https://github.com/aKqir24/OldTube/issues
-@version        1.1.4
+@version        1.1.6
 @license        MIT
 @preprocessor   stylus
 
@@ -62,11 +62,22 @@ if compactMenu{
 /* All Buttons Section */
     /* Like, Dislike, And More Button*/
     .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
+        border: 0px;
         color: var(--yt-spec-text-primary);
         background-color: var(--yt-emoji-picker-variant-selector-bg-color);
         border-radius: var(--button-corner-radius)
     }
     
+        .smartimation--enable-masking .smartimation__border {
+            border-radius: var(--button-corner-radius);
+            margin: -2px
+        }
+        
+        .smartimation--enable-masking .smartimation__border {
+            -webkit-mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+            mask-composite: add, add;
+        }
+        
     /*
     --yt-spec-general-background-b 
     --yt-spec-button-chip-background-hover: rgba(0,0,0,0.1);
