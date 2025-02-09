@@ -5,22 +5,26 @@
 @namespace      https://userstyles.world/user/aKqir24
 @homepageURL    https://github.com/aKqir24/OldTube
 @supportURL     https://github.com/aKqir24/OldTube/issues
-@version        1.1.6
+@version        1.1.7
 @license        MIT
 @preprocessor   stylus
 
 
 @var number descriptionRadius "Panels & Cards Corner" [0, 0, 20, 5, "px"]
-@var number feedVideoRadius "Video Corner" [0, 0, 20, 5, "px"]
-@var number buttonRadius "Button Corner" [0, 0, 20, 5, "px"]
-@var number searchBoxRadius "Search Corner" [0, 0, 20, 5, "px"]
-@var range videoCardThumbnail "Video Card Spacing" [1, 0, 10, 1, "px"]
+@var number feedVideoRadius "Video & Thumb Corner" [0, 0, 20, 5, "px"]
+@var number buttonRadius "Buttons Corner" [0, 0, 20, 5, "px"]
+@var number searchBoxRadius "Search Box Corner" [0, 0, 20, 5, "px"]
+@var range videoCardThumbnail "Video Card's Spacing" [1, 0, 10, 1, "px"]
 
 @var checkbox oldSubscribe 'Old Subscribe' 1
 @var checkbox removeShorts  'Remove Shorts' 1
 @var checkbox compactMenu  'Compact Menu' 1
+@var checkbox betaFeatures ' Beta Features' 0
 
-@var color progressColor 'Progressbar Color' #CC0000
+@var select accentChoice "Accent Color Applies" [ "Sub:Sub Button Only", 
+                                                  "Prog:Progress Bar Only", 
+                                                  "Both:Both*" ]
+@var color accentColor 'Accent Color' #CC0000
 ==/UserStyle== */
 
 /*==TO BE ADDED== */
@@ -34,16 +38,21 @@
         --sub-black-bg-btn: #303030;
         --sub-white--text-btn: #F2F2F2;
         --button-corner-radius: buttonRadius;
-        --yt-spec-brand-button-background: progressColor;
         --corner-radius-video-player: feedVideoRadius;
         --description-corner: descriptionRadius;
+        --subscribe-button-color: #CC0000;
+        --progressbar-color: #CC0000;
         --feed-thumbnail-preview: feedVideoRadius;
         --video-card-preview: videoCardThumbnail;
         --search-box-radius: searchBoxRadius;
-        --progressbar-color: progressColor;
         --dislike-color: red;
         --like-color: lime;
     }
+
+/* Accent Color Application */
+if accentChoice == Both { :root { --subscribe-button-color: accentColor; --progressbar-color: accentColor } }
+if accentChoice == Sub { :root { --subscribe-button-color: accentColor } }
+if accentChoice == Prog { :root { --progressbar-color: accentColor } }
 
 /*Side Menu Buttons*/
 if compactMenu{
@@ -174,7 +183,7 @@ if compactMenu{
                     /* InPrivate */
                     border-radius: var(--button-corner-radius);
                     color: var(--yt-spec-static-brand-white) !important;
-                    background-color: var(--yt-spec-brand-button-background) !important
+                    background-color: var(--subscribe-button-color) !important
                 }
                 /* Unsubscribe button */
                 button[aria-label^=Unsubscribe],
@@ -201,6 +210,14 @@ if compactMenu{
                 border-radius: var(--button-corner-radius);
                 background-color: var(--sub-white--text-btn) !important
             }
+        }
+        
+        /* Shorts Subscribe button*/
+        .yt-spec-button-shape-next--size-s {
+            margin-left: 10px;
+            border-radius: var(--button-corner-radius);
+            color: var(--yt-spec-static-brand-white) !important;
+            background-color: var(--subscribe-button-color) !important
         }
     }
 }
@@ -254,7 +271,7 @@ if compactMenu{
     
     /* Description & Chat */
     ytd-playlist-panel-renderer[modern-panels]:not([within-miniplayer]) #container.ytd-playlist-panel-renderer,
-    ytd-watch-metadata[description-collapsed] #description.ytd-watch-metadata,
+    ytd-watch-metadata[description-collapsed] #description.ytd-watch-metadata, ytd-rich-metadata-renderer[rounded],
     ytd-watch-flexy[flexy][js-panel-height_]:not([fixed-panels]) #chat.ytd-watch-flexy:not([collapsed]),
     .ytVideoMetadataCarouselViewModelHost { border-radius: var(--description-corner) !important }
     
@@ -267,9 +284,19 @@ if compactMenu{
 
     /*Border Player Background*/    
     .style-scope ytd-rich-grid-renderer{ border-radius: var(--button-corner-radius); color: #2e2e2e }
-
-    /* Change Progressbar*/
+    .metadata-container.ytd-reel-player-overlay-renderer { border-radius: var(--feed-thumbnail-preview) }
+    /* Progressbar */
     .ytp-play-progress { background-color: var(--progressbar-color) !important }
+    .ytProgressBarLineProgressBarPlayedRefresh { background: var(--progressbar-color) !important }
     .ytp-cairo-refresh-signature-moments .ytp-play-progress { background: var(--progressbar-color) !important }
     .ytp-cairo-refresh .ytp-swatch-background-color { background-color: var(--progressbar-color) !important }
     .ytp-scrubber-button { -webkit-transition: -webkit-transform .1s cubic-bezier(.4,0,1,1) }
+    
+    if betaFeatures {
+        .player-container.ytd-reel-video-renderer,
+        .metadata-container.ytd-reel-player-overlay-renderer { border-radius: var(--feed-thumbnail-preview) }
+        .ytPlayerProgressBarDragContainer, ytProgressBarLineProgressBarLine { margin-left: -8px; width: 81.6%; position: sticky}
+        .ytProgressBarLineProgressBarBackground, .ytProgressBarLineProgressBarPlayed,
+        .ytProgressBarLineProgressBarLine, yt-progress-bar-playhead { width: 103.41% }
+        .ytProgressBarLineHost { width: 123.53% }
+    }
