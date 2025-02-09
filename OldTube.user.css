@@ -71,7 +71,8 @@ if compactMenu{
 }
 
 /* All Buttons Section */
-    /* Like, Dislike, And More Button*/
+    /* Like, Dislike, More Button, And More Buttons*/
+    .yt-spec-button-shape-next--size-m,
     .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
         border: 0px;
         color: var(--yt-spec-text-primary);
