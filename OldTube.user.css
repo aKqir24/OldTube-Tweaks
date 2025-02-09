@@ -258,7 +258,8 @@ if compactMenu{
         }
         
     /*End Screen */
-    .ytp-videowall-still-round-medium .ytp-videowall-still-image { border-radius: var(--feed-thumbnail-preview) }
+    .ytp-videowall-still-round-medium .ytp-videowall-still-image, .ytp-ce-video.ytp-ce-medium-round, 
+    .ytp-ce-playlist.ytp-ce-medium-round, .ytp-ce-medium-round .ytp-ce-expanding-overlay-background, { border-radius: var(--feed-thumbnail-preview) }
     .html5-endscreen { margin-top: 12px }
         
     /* Remove The Shorts Suggestion*/
