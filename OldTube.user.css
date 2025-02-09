@@ -213,7 +213,7 @@ if compactMenu{
         }
         
         /* Shorts Subscribe button*/
-        .yt-spec-button-shape-next--size-s {
+        .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--filled {
             margin-left: 10px;
             border-radius: var(--button-corner-radius);
             color: var(--yt-spec-static-brand-white) !important;
