@@ -135,7 +135,6 @@ if compactMenu{
 /* Feed Section*/
     /* Thumbnail */
     .ytd-thumbnail,
-    .shortsLockupViewModelHostThumbnailContainerRounded,
     .collections-stack-wiz__collection-stack1--medium,
     .collections-stack-wiz__collection-stack2,
     .yt-thumbnail-view-model--medium,
@@ -271,6 +270,7 @@ if compactMenu{
     }
     
     /* Description & Chat */
+    #description.ytd-watch-metadata, .shortsLockupViewModelHostThumbnailContainerRounded,
     ytd-playlist-panel-renderer[modern-panels]:not([within-miniplayer]) #container.ytd-playlist-panel-renderer,
     ytd-watch-metadata[description-collapsed] #description.ytd-watch-metadata, ytd-rich-metadata-renderer[rounded],
     ytd-watch-flexy[flexy][js-panel-height_]:not([fixed-panels]) #chat.ytd-watch-flexy:not([collapsed]),
