@@ -271,6 +271,8 @@ if compactMenu{
     }
     
     /* Description & Chat */
+    ytd-expandable-metadata-renderer:not([is-expanded]) #header.ytd-expandable-metadata-renderer:hover,
+    ytd-expandable-metadata-renderer:not([is-expanded]), ytd-expandable-metadata-renderer,
     #description.ytd-watch-metadata, .shortsLockupViewModelHostThumbnailContainerRounded,
     ytd-playlist-panel-renderer[modern-panels]:not([within-miniplayer]) #container.ytd-playlist-panel-renderer,
     ytd-watch-metadata[description-collapsed] #description.ytd-watch-metadata, ytd-rich-metadata-renderer[rounded],
