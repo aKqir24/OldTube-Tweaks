@@ -5,7 +5,7 @@
 @namespace      https://userstyles.world/user/aKqir24
 @homepageURL    https://github.com/aKqir24/OldTube
 @supportURL     https://github.com/aKqir24/OldTube/issues
-@version        1.1.7
+@version        1.1.8
 @license        MIT
 @preprocessor   stylus
 
@@ -56,6 +56,7 @@ if accentChoice == Prog { :root { --progressbar-color: accentColor } }
 
 /*Side Menu Buttons*/
 if compactMenu{
+    tp-yt-paper-item.ytd-guide-entry-renderer { padding-left: 1px; padding-right: 1px }
     ytd-mini-guide-entry-renderer[system-icons][is-active] .title.ytd-mini-guide-entry-renderer,
     ytd-mini-guide-entry-renderer[system-icons] .title.ytd-mini-guide-entry-renderer { display: none }
     
@@ -72,7 +73,7 @@ if compactMenu{
 
 /* All Buttons Section */
     /* Like, Dislike, More Button, And More Buttons*/
-    .yt-spec-button-shape-next--size-m,
+    .yt-spec-button-shape-next--size-m, x, #voice-search-button.ytd-masthead,
     .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
         border: 0px;
         color: var(--yt-spec-text-primary);
@@ -80,6 +81,8 @@ if compactMenu{
         border-radius: var(--button-corner-radius)
     }
     
+    ytd-guide-entry-renderer, .yt-simple-endpoint:hover, .ytd-guide-collapsible-section-entry-renderer:hover, #section-items:hover
+    #guide-inner-content.ytd-app:hover, ytd-guide-renderer:hover, ytd-guide-entry-renderer:hover { border-radius: var(--button-corner-radius) }
         .smartimation--enable-masking .smartimation__border {
             border-radius: var(--button-corner-radius);
             margin: -2px
@@ -98,7 +101,7 @@ if compactMenu{
     
     /*Channel Join Button*/
     .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled { border-radius: var(--button-corner-radius) }
-        .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--tonal{
+        .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--tonal {
             border-radius: var(--button-corner-radius);
             text-transform: uppercase;
             font-family: "Roboto","Arial",sans-serif;
