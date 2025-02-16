@@ -5,7 +5,7 @@
 @namespace      https://userstyles.world/user/aKqir24
 @homepageURL    https://github.com/aKqir24/OldTube
 @supportURL     https://github.com/aKqir24/OldTube/issues
-@version        1.1.8
+@version        1.2.0
 @license        MIT
 @preprocessor   stylus
 
@@ -73,6 +73,7 @@ if compactMenu{
 
 /* All Buttons Section */
     /* Like, Dislike, More Button, And More Buttons*/
+    .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text { color: var(--yt-spec-icon-disabled) }
     .yt-spec-button-shape-next--size-m, x, #voice-search-button.ytd-masthead,
     .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
         border: 0px;
@@ -165,6 +166,9 @@ if compactMenu{
             width: 55px
         }
     
+    /*Channel Menu*/
+    ytd-multi-page-menu-renderer { border-radius: var(--description-corner) !important }
+    
     /*Channel Banner*/
     .yt-image-banner-view-model-wiz--inset { border-radius: var(--feed-thumbnail-preview) !important }
     
@@ -243,8 +247,9 @@ if compactMenu{
         white-space: normal;
         padding-top: 5px
     }
-
+    
     /*Mini Player*/
+    #card.ytd-miniplayer,
     #modern-card.ytd-miniplayer,
     .ytp-player-minimized .html5-main-video, 
     .ytp-player-minimized .ytp-miniplayer-scrim, 
@@ -275,8 +280,9 @@ if compactMenu{
     }
     
     /* Description & Chat */
-    ytd-expandable-metadata-renderer:not([is-expanded]) #header.ytd-expandable-metadata-renderer:hover,
+    a.yt-simple-endpoint.yt-formatted-string { color:var(--yt-spec-call-to-action) }
     ytd-expandable-metadata-renderer:not([is-expanded]), ytd-expandable-metadata-renderer,
+    ytd-expandable-metadata-renderer:not([is-expanded]) #header.ytd-expandable-metadata-renderer:hover,
     #description.ytd-watch-metadata, .shortsLockupViewModelHostThumbnailContainerRounded,
     ytd-playlist-panel-renderer[modern-panels]:not([within-miniplayer]) #container.ytd-playlist-panel-renderer,
     ytd-watch-metadata[description-collapsed] #description.ytd-watch-metadata, ytd-rich-metadata-renderer[rounded],
@@ -294,11 +300,17 @@ if compactMenu{
     .style-scope ytd-rich-grid-renderer{ border-radius: var(--button-corner-radius); color: #2e2e2e }
     .metadata-container.ytd-reel-player-overlay-renderer { border-radius: var(--feed-thumbnail-preview) }
     /* Progressbar */
-    .ytp-play-progress { background-color: var(--progressbar-color) !important }
+    .ytp-play-progress { 
+        background-color: var(--progressbar-color) !important;
+        background-image: linear-gradient(to right, var(--progress-color) 80%, var(--progress-color) 100%)
+    }
     .ytProgressBarLineProgressBarPlayedRefresh { background: var(--progressbar-color) !important }
     .ytp-cairo-refresh-signature-moments .ytp-play-progress { background: var(--progressbar-color) !important }
     .ytp-cairo-refresh .ytp-swatch-background-color { background-color: var(--progressbar-color) !important }
-    .ytp-scrubber-button { -webkit-transition: -webkit-transform .1s cubic-bezier(.4,0,1,1) }
+    .ytp-scrubber-button, .ytp-swatch-background-color { 
+        background-color: var(--progressbar-color); 
+        -webkit-transition: -webkit-transform .1s cubic-bezier(.4,0,1,1)
+    }
     
     if betaFeatures {
         .player-container.ytd-reel-video-renderer,
