@@ -1,29 +1,27 @@
 /* ==UserStyle==
-@name           OldTube
+@name           OldTube Tweaks
 @author         aKqir24 <Akqir> (https://github.com/aKqir24)
-@description    Interface tweaks for an nostalgic experience in youtube...
+@description    Interface tweaks for a nostalgic experience in youtube...
 @namespace      https://userstyles.world/user/aKqir24
-@homepageURL    https://github.com/aKqir24/OldTube
-@supportURL     https://github.com/aKqir24/OldTube/issues
-@version        1.2.0
+@homepageURL    https://github.com/aKqir24/OldTube-Tweaks
+@supportURL     https://github.com/aKqir24/OldTube-Tweaks/issues
+@version        1.2.2
 @license        MIT
 @preprocessor   stylus
 
-
-@var number descriptionRadius "Panels & Cards Corner" [0, 0, 20, 5, "px"]
-@var number feedVideoRadius "Video & Thumb Corner" [0, 0, 20, 5, "px"]
+@var number descriptionRadius "Panels Corner" [0, 0, 20, 5, "px"]
+@var number feedVideoRadius "Video Corner" [0, 0, 20, 5, "px"]
 @var number buttonRadius "Buttons Corner" [0, 0, 20, 5, "px"]
-@var number searchBoxRadius "Search Box Corner" [0, 0, 20, 5, "px"]
-@var range videoCardThumbnail "Video Card's Spacing" [1, 0, 10, 1, "px"]
+@var number searchBoxRadius "Search Corner" [0, 0, 20, 5, "px"]
+@var range videoCardThumbnail "Video Padding" [1, 0, 10, 1, "px"]
 
-@var checkbox oldSubscribe 'Old Subscribe' 1
 @var checkbox removeShorts  'Remove Shorts' 1
 @var checkbox compactMenu  'Compact Menu' 1
 @var checkbox betaFeatures ' Beta Features' 0
 
-@var select accentChoice "Accent Color Applies" [ "Sub:Sub Button Only", 
-                                                  "Prog:Progress Bar Only", 
-                                                  "Both:Both*" ]
+@var select accentChoice "Accent Range" [ "None:None", 
+                                          "Mini:Minimal", 
+                                          "Full:Full*" ]
 @var color accentColor 'Accent Color' #CC0000
 ==/UserStyle== */
 
@@ -40,19 +38,30 @@
         --button-corner-radius: buttonRadius;
         --corner-radius-video-player: feedVideoRadius;
         --description-corner: descriptionRadius;
-        --subscribe-button-color: #CC0000;
-        --progressbar-color: #CC0000;
         --feed-thumbnail-preview: feedVideoRadius;
         --video-card-preview: videoCardThumbnail;
         --search-box-radius: searchBoxRadius;
+        --progressbar-color-right: #ff2791;
+        --progressbar-color-left: #f03; 
         --dislike-color: red;
         --like-color: lime;
     }
 
 /* Accent Color Application */
-if accentChoice == Both { :root { --subscribe-button-color: accentColor; --progressbar-color: accentColor } }
-if accentChoice == Sub { :root { --subscribe-button-color: accentColor } }
-if accentChoice == Prog { :root { --progressbar-color: accentColor } }
+if accentChoice == Full { 
+    :root { --subscribe-button-color: accentColor; --playlist-progressbar-color: accentColor; 
+            --progressbar-color-left: accentColor; --progressbar-color-right: accentColor
+    }
+    html[dark], [dark] { --yt-spec-red-indicator: accentColor }
+}
+
+if accentChoice == Mini { :root { --subscribe-button-color: accentColor;  --playlist-progressbar-color: accentColor } }
+
+if accentChoice == None { 
+    :root { --playlist-progress-color: linear-gradient(to right,#f03 80%,#ff2791 100%) }
+    html[dark], [dark] { --yt-spec-red-indicator: linear-gradient(to right,#f03 80%,#ff2791 100%) }
+    }
+
 
 /*Side Menu Buttons*/
 if compactMenu{
@@ -83,7 +92,7 @@ if compactMenu{
     }
     
     ytd-guide-entry-renderer, .yt-simple-endpoint:hover, .ytd-guide-collapsible-section-entry-renderer:hover, #section-items:hover
-    #guide-inner-content.ytd-app:hover, ytd-guide-renderer:hover, ytd-guide-entry-renderer:hover { border-radius: var(--button-corner-radius) }
+    #guide-inner-content.ytd-app:hover, ytd-guide-renderer:hover, ytd-guide-entry-renderer:hover { border-radius: var(--button-corner-radius) }}
         .smartimation--enable-masking .smartimation__border {
             border-radius: var(--button-corner-radius);
             margin: -2px
@@ -149,6 +158,8 @@ if compactMenu{
     }
         /* Grid Wrapper */
         #contents.ytd-rich-grid-renderer { margin-top: -18px; margin-right: -0px; width: 102% }
+        
+        .badge-shape-wiz{font-size: 1.1rem; text-transform: uppercase; font-weight: BOLD }
 
     /* Side Menu */
     .yt-simple-endpoint,
@@ -180,7 +191,6 @@ if compactMenu{
     
         .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-leading .yt-spec-button-shape-next__icon { margin: 0px }
     
-    if oldSubscribe {
     /* Subscribed button */
         #subscribe,
         #subscribe-button {
@@ -227,8 +237,7 @@ if compactMenu{
             color: var(--yt-spec-static-brand-white) !important;
             background-color: var(--subscribe-button-color) !important
         }
-    }
-}
+    
 
 /*Video Player Section*/
 
@@ -299,16 +308,21 @@ if compactMenu{
     /*Border Player Background*/    
     .style-scope ytd-rich-grid-renderer{ border-radius: var(--button-corner-radius); color: #2e2e2e }
     .metadata-container.ytd-reel-player-overlay-renderer { border-radius: var(--feed-thumbnail-preview) }
+    
     /* Progressbar */
     .ytp-play-progress { 
-        background-color: var(--progressbar-color) !important;
-        background-image: linear-gradient(to right, var(--progress-color) 80%, var(--progress-color) 100%)
+        background-color: var(--progressbar-color-left) !important;
+        background-image: linear-gradient(to right, var(--progressbar-color-left) 80%, var(--progressbar-color-right) 100%)
     }
-    .ytProgressBarLineProgressBarPlayedRefresh { background: var(--progressbar-color) !important }
-    .ytp-cairo-refresh-signature-moments .ytp-play-progress { background: var(--progressbar-color) !important }
-    .ytp-cairo-refresh .ytp-swatch-background-color { background-color: var(--progressbar-color) !important }
+     ytd-thumbnail-overlay-resume-playback-renderer[enable-refresh-signature-moments-web] #progress.ytd-thumbnail-overlay-resume-playback-renderer{ 
+        background: var(--playlist-progressbar-color) !important; background-color: var(--playlist-progressbar-color) !important; 
+    }
+    
+    .ytProgressBarLineProgressBarPlayedRefresh { background: var(--progressbar-color-left) !important }
+    .ytp-cairo-refresh-signature-moments .ytp-play-progress { background: var(--progressbar-color-left) !important }
+    .ytp-cairo-refresh .ytp-swatch-background-color { background-color: var(--progressbar-color-left) !important }
     .ytp-scrubber-button, .ytp-swatch-background-color { 
-        background-color: var(--progressbar-color); 
+        background-color: var(--progressbar-color-right); 
         -webkit-transition: -webkit-transform .1s cubic-bezier(.4,0,1,1)
     }
     
