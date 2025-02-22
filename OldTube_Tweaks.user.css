@@ -5,7 +5,7 @@
 @namespace      https://userstyles.world/user/aKqir24
 @homepageURL    https://github.com/aKqir24/OldTube-Tweaks
 @supportURL     https://github.com/aKqir24/OldTube-Tweaks/issues
-@version        1.2.2
+@version        1.2.5
 @license        MIT
 @preprocessor   stylus
 
@@ -182,18 +182,12 @@
         color: var(--yt-spec-call-to-action)
     }
 
-    ytd-expandable-metadata-renderer:not([is-expanded]),
-    ytd-expandable-metadata-renderer,
-    ytd-expandable-metadata-renderer:not([is-expanded])
-      #header.ytd-expandable-metadata-renderer:hover,
-    #description.ytd-watch-metadata,
-    .shortsLockupViewModelHostThumbnailContainerRounded,
-    ytd-playlist-panel-renderer[modern-panels]:not([within-miniplayer])
-      #container.ytd-playlist-panel-renderer,
-    ytd-watch-metadata[description-collapsed] #description.ytd-watch-metadata,
-    ytd-rich-metadata-renderer[rounded],
-    ytd-watch-flexy[flexy][js-panel-height_]:not([fixed-panels])
-      #chat.ytd-watch-flexy:not([collapsed]),
+    ytd-expandable-metadata-renderer:not([is-expanded]),ytd-expandable-metadata-renderer,
+    ytd-expandable-metadata-renderer:not([is-expanded]) #header.ytd-expandable-metadata-renderer:hover,
+    #description.ytd-watch-metadata, .shortsLockupViewModelHostThumbnailContainerRounded,
+    ytd-playlist-panel-renderer[modern-panels]:not([within-miniplayer]) #container.ytd-playlist-panel-renderer,
+    ytd-watch-metadata[description-collapsed] #description.ytd-watch-metadata, ytd-rich-metadata-renderer[rounded],
+    ytd-watch-flexy[flexy][js-panel-height_]:not([fixed-panels]) #chat.ytd-watch-flexy:not([collapsed]),
     .ytVideoMetadataCarouselViewModelHost {
         border-radius: var(--description-corner) !important
     }
@@ -316,8 +310,7 @@
 
     /*? Main Player */
     .html5-video-player,
-    ytd-watch-flexy[rounded-player-large][default-layout]
-    #ytd-player.ytd-watch-flexy {
+    ytd-watch-flexy[rounded-player-large][default-layout] #ytd-player.ytd-watch-flexy {
         border-radius: var(--corner-radius-video-player);
         left: -1px;
     }
@@ -348,8 +341,7 @@
     .ytp-cairo-refresh .ytp-swatch-background-color {
         background-color: var(--progressbar-color-left) !important
     }
-    .ytp-scrubber-button,
-    .ytp-swatch-background-color {
+    .ytp-scrubber-button, .ytp-swatch-background-color {
         background-color: var(--progressbar-color-right);
         -webkit-transition: -webkit-transform 0.1s cubic-bezier(0.4, 0, 1, 1)
     }
@@ -436,10 +428,8 @@
 }
 
     /*? Next Button */
-    .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-leading
-    .yt-spec-button-shape-next__icon,
-    .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-leading
-    .yt-spec-button-shape-next__icon {
+    .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-leading .yt-spec-button-shape-next__icon,
+    .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-leading .yt-spec-button-shape-next__icon {
         padding-right: 3px;
         padding-left: 0px
     }
@@ -454,8 +444,7 @@
         text-transform: uppercase;
         font-family: "Roboto", "Arial", sans-serif;
         font-size: 150%;
-        font-weight: bold;
-        width: 11.5rem
+        font-weight: bold
     }
 
     .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--outline {
