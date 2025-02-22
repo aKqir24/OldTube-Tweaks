@@ -118,24 +118,25 @@
     /*? Side Menu Buttons */
     if compactMenu {
         tp-yt-paper-item.ytd-guide-entry-renderer {
-          padding-left: 1px;
-          padding-right: 1px;
+            padding-left: 1px;
+            padding-right: 1px;
         }
+
         ytd-mini-guide-entry-renderer[system-icons][is-active]
-          .title.ytd-mini-guide-entry-renderer,
+        .title.ytd-mini-guide-entry-renderer,
         ytd-mini-guide-entry-renderer[system-icons]
-          .title.ytd-mini-guide-entry-renderer {
-          display: none;
+        .title.ytd-mini-guide-entry-renderer {
+            display: none;
         }
 
         ytd-mini-guide-entry-renderer {
-          border-radius: var(--button-corner-radius);
-          width: 54px;
+            border-radius: var(--button-corner-radius);
+            width: 54px;
         }
 
         a.ytd-mini-guide-entry-renderer {
-          padding: 14px 0px 12px;
-          width: 54px;
+            padding: 14px 0px 12px;
+            width: 54px
         }
     }
 
@@ -168,17 +169,19 @@
     /*? Shorts Suggestion*/
     if removeShorts {
         ytd-rich-shelf-renderer[standard-shelf-margins][is-shorts][is-show-more-hidden][is-show-less-hidden][is-truncated]
-          #dismissible.ytd-rich-shelf-renderer,
+        #dismissible.ytd-rich-shelf-renderer,
         ytd-exploratory-results-renderer.ytd-item-section-renderer,
         ytd-horizontal-card-list-renderer.ytd-item-section-renderer:not(:first-child),
         ytd-rich-shelf-renderer[standard-shelf-margins]
-          #dismissible.ytd-rich-shelf-renderer,
+        #dismissible.ytd-rich-shelf-renderer,
         ytd-reel-shelf-renderer.ytd-item-section-renderer {
             display: none;
             margin: 0px;
-            padding: 0px;
+            padding: 0px
         }
     }
+
+
 
 /** Panels Section **/
 
