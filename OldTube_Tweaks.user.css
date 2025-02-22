@@ -20,7 +20,7 @@
 @var checkbox compactMenu  'Compact Menu' 1
 @var checkbox betaFeatures ' Beta Features' 0
 
-@var select accentChoice "Accent Range" [ "None:None",
+@var select accentChoice "Theme Color Level" [ "None:None",
                                           "Mini:Minimal",
                                           "Full:Full*" ]
 @var color accentColor1 'Primary Color' #CC0000
