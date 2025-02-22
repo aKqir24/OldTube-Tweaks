@@ -114,19 +114,16 @@
     if compactMenu {
         tp-yt-paper-item.ytd-guide-entry-renderer {
             padding-left: 1px;
-            padding-right: 1px;
+            padding-right: 1px
         }
 
-        ytd-mini-guide-entry-renderer[system-icons][is-active]
-        .title.ytd-mini-guide-entry-renderer,
-        ytd-mini-guide-entry-renderer[system-icons]
         .title.ytd-mini-guide-entry-renderer {
-            display: none;
+            display: none
         }
 
         ytd-mini-guide-entry-renderer {
             border-radius: var(--button-corner-radius);
-            width: 54px;
+            width: 54px
         }
 
         a.ytd-mini-guide-entry-renderer {
@@ -333,10 +330,9 @@
     /*? Progressbar */
     .ytProgressBarLineProgressBarPlayedRefresh,
     .ytp-cairo-refresh-signature-moments .ytp-play-progress,
-    #progress.ytd-thumbnail-overlay-resume-playback-renderer,
     .ytp-play-progress,
     ytd-thumbnail-overlay-resume-playback-renderer[enable-refresh-signature-moments-web]
-        #progress.ytd-thumbnail-overlay-resume-playback-renderer {
+    #progress.ytd-thumbnail-overlay-resume-playback-renderer {
         background: linear-gradient(
             to right,
             var(--progressbar-color-left) 80%,
@@ -458,7 +454,8 @@
         text-transform: uppercase;
         font-family: "Roboto", "Arial", sans-serif;
         font-size: 150%;
-        font-weight: bold
+        font-weight: bold;
+        width: 11.5rem
     }
 
     .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--outline {
