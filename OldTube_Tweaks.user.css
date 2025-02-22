@@ -60,12 +60,6 @@
             --subscribe-button-color: accentColor1;
             --progressbar-color-left: accentColor1;
             --progressbar-color-right: accentColor2;
-            --playlist-progressbar-color:
-            linear-gradient(
-                to right,
-                var(--progressbar-color-left) 80%,
-                var(--progressbar-color-right) 100%
-            );
             --search-box-color: accentColor1
         }
 
@@ -73,10 +67,11 @@
         [dark] {
             --yt-spec-red-indicator: linear-gradient(
                 to right,
-                var(--progressbar-color-left) 80%,
-                var(--progressbar-color-right) 100%
+                var(accentColor1) 80%,
+                var(accentColor2) 100%
             )
         }
+
     } else if accentChoice == Mini {
         :root {
             --search-box-color: accentColor1;
@@ -338,6 +333,7 @@
     /*? Progressbar */
     .ytProgressBarLineProgressBarPlayedRefresh,
     .ytp-cairo-refresh-signature-moments .ytp-play-progress,
+    #progress.ytd-thumbnail-overlay-resume-playback-renderer,
     .ytp-play-progress,
     ytd-thumbnail-overlay-resume-playback-renderer[enable-refresh-signature-moments-web]
         #progress.ytd-thumbnail-overlay-resume-playback-renderer {
@@ -351,11 +347,6 @@
             var(--progressbar-color-left) 80%,
             var(--progressbar-color-right) 100%
       )
-    }
-
-    #progress.ytd-thumbnail-overlay-resume-playback-renderer{
-        background: var(--playlist-progressbar-color);
-        background-image: var(--playlist-progressbar-color)
     }
 
     .ytp-cairo-refresh .ytp-swatch-background-color {
