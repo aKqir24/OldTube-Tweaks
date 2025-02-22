@@ -49,7 +49,7 @@
     --dislike-color: red;
     --like-color: lime;
   }
-
+}
 
 
 /** Options Condition **/
@@ -413,7 +413,7 @@
     &[aria-label^="Unsubscribe"],
     &.yt-spec-button-shape-next.yt-spec-button-shape-next--tonal {
         border-radius: var(--button-corner-radius);
-        background-color: var(--sub-white--text-btn) !important;
+        background-color: var(--sub-white--text-btn) !important
     }
   }
 
@@ -422,7 +422,7 @@
     margin-left: 10px;
     border-radius: var(--button-corner-radius);
     color: var(--yt-spec-static-brand-white) !important;
-    background-color: var(--subscribe-button-color) !important;
+    background-color: var(--subscribe-button-color) !important
   }
 
     #subscribe,
@@ -433,14 +433,14 @@
       /* InPrivate */
         border-radius: var(--button-corner-radius);
         color: var(--yt-spec-static-brand-white) !important;
-        background-color: var(--subscribe-button-color) !important;
+        background-color: var(--subscribe-button-color) !important
     }
 
     button[aria-label^="Unsubscribe"],
     button.yt-spec-button-shape-next.yt-spec-button-shape-next--tonal {
         border-radius: var(--button-corner-radius);
         color: var(--yt-spec-text-secondary) !important;
-        background-color: var(--yt-spec-badge-chip-background) !important;
+        background-color: var(--yt-spec-badge-chip-background) !important
     }
   }
 }
@@ -451,7 +451,7 @@
     .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-leading
     .yt-spec-button-shape-next__icon {
         padding-right: 3px;
-        padding-left: 0px;
+        padding-left: 0px
     }
 
     /*? Join Button */
@@ -464,17 +464,17 @@
         text-transform: uppercase;
         font-family: "Roboto", "Arial", sans-serif;
         font-size: 150%;
-        font-weight: bold;
+        font-weight: bold
     }
 
     .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--outline {
         border-radius: var(--button-corner-radius);
-        text-transform: uppercase;
+        text-transform: uppercase
     }
 
     .yt-spec-button-shape-next {
         text-transform: uppercase;
-        background-color: rgba(250, 250, 250, 0);
+        background-color: rgba(250, 250, 250, 0)
     }
 
     /*? Suggestion Buttons */
@@ -482,7 +482,7 @@
     #chip-container.yt-chip-cloud-chip-renderer,
     yt-chip-cloud-chip-renderer[chip-style="STYLE_HOME_FILTER"]
     #chip-container.yt-chip-cloud-chip-renderer {
-        border-radius: var(--button-corner-radius);
+        border-radius: var(--button-corner-radius)
     }
 
     #scroll-container.ytd-feed-filter-chip-bar-renderer {
@@ -493,7 +493,7 @@
     /* Search Box */
     .ytSearchboxComponentInputBoxDark,
     .ytSearchboxComponentSearchButtonDark {
-        border-radius: var(--search-box-radius);
+        border-radius: var(--search-box-radius)
     }
 
     ytSearchboxComponentSuggestionsContainer {
@@ -508,6 +508,4 @@
         color: var(--search-box-color)
     }
 
-    #voice-search-button.ytd-masthead {
-        margin-right: 10px;
-    }
+    #voice-search-button.ytd-masthead { margin-right: 10px }
