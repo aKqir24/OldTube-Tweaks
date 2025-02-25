@@ -328,6 +328,9 @@
       }
 
       /*? Progressbar */
+      .ytProgressBarLinePlayerProgressBarLoaded,
+      .ytProgressBarLineProgressBarHovered,
+      .ytProgressBarLineProgressBarPlayed,
       .ytProgressBarLineProgressBarPlayedRefresh,
       .ytp-cairo-refresh-signature-moments .ytp-play-progress,
       .ytp-play-progress,
@@ -389,6 +392,11 @@
           border-radius: var(--button-corner-radius)
       }
 
+      .animated-action__background-container {
+          overflow: hidden;
+          border-radius: var(--button-corner-radius)
+      }
+
       /* Shorts Unsubscribe button */
       html[dark] ytd-shorts #subscribe-button yt-button-shape button {
       &[aria-label^="Unsubscribe"],
@@ -408,10 +416,10 @@
 
     /* Shorts Subscribe button*/
     .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--filled {
-      margin-left: 10px;
-      border-radius: var(--button-corner-radius);
-      color: var(--yt-spec-static-brand-white) !important;
-      background-color: var(--subscribe-button-color) !important
+          margin-left: 10px;
+          border-radius: var(--button-corner-radius);
+          color: var(--yt-spec-static-brand-white) !important;
+          background-color: var(--subscribe-button-color) !important
     }
 
       #subscribe,
