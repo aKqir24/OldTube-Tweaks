@@ -178,6 +178,9 @@
           color: var(--yt-spec-call-to-action)
       }
 
+      #video-title.ytd-playlist-video-renderer {
+          color: white
+      }
       #middle-row.ytd-watch-metadata:empty {
           display: flex;
           margin-top: 1rem;
