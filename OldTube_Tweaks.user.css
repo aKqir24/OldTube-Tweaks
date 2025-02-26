@@ -5,7 +5,7 @@
 @namespace      https://userstyles.world/user/aKqir24
 @homepageURL    https://github.com/aKqir24/OldTube-Tweaks
 @supportURL     https://github.com/aKqir24/OldTube-Tweaks/issues
-@version        1.2.5
+@version        1.2.6
 @license        MIT
 @preprocessor   stylus
 
@@ -15,7 +15,7 @@
 @var number searchBoxRadius "Searchbox Radius" [0, 0, 20, 5, "px"]
 @var range videoCardThumbnail "Video Margins" [1, 0, 10, 1, "px"]
 
-@var checkbox controlShadow 'Controls Shadow' 0
+@var checkbox controlShadow 'Controls Shadow' 1
 @var checkbox removeShorts  'Remove Shorts' 1
 @var checkbox compactMenu  'Compact Menu' 1
 @var checkbox betaFeatures ' Beta Features' 0
@@ -99,7 +99,7 @@
       }
 
       /*? Controls Shadow */
-      if controlShadow {
+      if controlShadow == 0{
           .ytp-gradient-top,
           .ytp-gradient-bottom {
               display: none;
@@ -151,6 +151,21 @@
 
           .ytProgressBarLineHost {
               width: 123.53%;
+          }
+
+          /*? Playlist */
+          ytd-item-section-header-renderer[modern-typography] #title.ytd-item-section-header-renderer{
+              margin-left: -10rem;
+              margin-bottom: 0px
+          }
+
+          #page-header.ytd-tabbed-page-header {
+              margin-left: -8%;
+          }
+
+          #dismissible.ytd-video-renderer {
+              width: 155%;
+              margin-left: -98px;
           }
       }
 
@@ -232,7 +247,7 @@
           border-radius: var(--description-corner) !important;
       }
 
-      /*?Channel Banner*/
+      /*?  Banner */
       .yt-image-banner-view-model-wiz--inset {
           border-radius: var(--feed-thumbnail-preview) !important;
       }
