@@ -167,6 +167,11 @@
               width: 155%;
               margin-left: -98px;
           }
+
+          #placeholder-area.ytd-comment-simplebox-renderer,
+          .focused-line.tp-yt-paper-input-container {
+              border-radius: 0px
+          }
       }
 
       /*? Shorts Suggestion*/
@@ -257,6 +262,18 @@
           margin: 0px;
       }
 
+      /*? Write A Comment */
+
+      ytd-commentbox:not([is-backstage-post]) yt-formatted-string#contenteditable-textarea.ytd-commentbox {
+          font-family: "Roboto","Arial",sans-serif;
+          margin-bottom: 0px;
+          font-size: 1.4rem;
+          line-height: 2rem;
+          font-weight: 400;
+          background-color: var(--yt-spec-raised-background);
+          padding: 8px 12px 8px;
+      }
+
   /** Video Section **/
 
       /*? Metadata Title */
@@ -274,6 +291,7 @@
           white-space: normal;
           padding-top: 5px
       }
+
 
       /*? Thumbnail */
       .ytd-thumbnail,
@@ -371,6 +389,11 @@
           -webkit-transition: -webkit-transform 0.1s cubic-bezier(0.4, 0, 1, 1)
       }
 
+      /*? Channel Info */
+      #upload-info.ytd-video-owner-renderer {
+          margin-right: 18px
+      }
+
   /** Buttons Section **/
 
       /*? Like, Dislike, More Button, And More Buttons */
@@ -390,6 +413,15 @@
       }
 
       /*? Subscribe Button */
+
+      .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-leading-trailing .yt-spec-button-shape-next__secondary-icon {
+          margin-left: 4px;
+          margin-right: -8px;
+      }
+
+      .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-leading-trailing .yt-spec-button-shape-next__icon {
+          display: none
+      }
 
       .yt-subscribe-button-view-model-wiz { margin: 0px }
       .smartimation--enable-masking .smartimation__border {
