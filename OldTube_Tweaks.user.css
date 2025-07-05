@@ -5,7 +5,7 @@
 @namespace      https://userstyles.world/user/aKqir24
 @homepageURL    https://github.com/aKqir24/OldTube-Tweaks
 @supportURL     https://github.com/aKqir24/OldTube-Tweaks/issues
-@version        1.3.1
+@version        1.3.2
 @license        MIT
 @preprocessor   stylus
 
@@ -257,7 +257,16 @@
     ytd-rich-grid-renderer:not([is-default-grid]) #header.ytd-rich-grid-renderer {
         margin-bottom: 2%;
     }
-    ytd-rich-item-renderer[rendered-from-rich-grid][is-in-first-column] { margin-left: 10px }
+    
+    ytd-rich-item-renderer[rendered-from-rich-grid] {
+        border-radius: var(--feed-thumbnail-preview);
+    }
+    
+    ytd-rich-item-renderer[rendered-from-rich-grid][is-in-first-column] { 
+        margin-left: 10px;
+        border-radius: var(--feed-thumbnail-preview);
+    }
+    
     ytd-rich-item-renderer { 
         margin-right: 1.5px;
         margin-left: 10px; 
@@ -334,6 +343,10 @@
         padding-top: 5px
     }
     
+    .title-badge.ytd-rich-grid-media, .video-badge.ytd-rich-grid-media { margin: 4px 4px 8px 0 }
+        
+        ytd-video-meta-block[rich-meta] #metadata-line.ytd-video-meta-block { margin-bottom: 6px }
+    
 
     /*? Thumbnail */
     .ytd-thumbnail, .collections-stack-wiz__collection-stack1--medium,
@@ -364,7 +377,8 @@
         margin-left: -2px;
     }
 
-    .metadata-container.ytd-reel-player-overlay-renderer {
+    .metadata-container.ytd-reel-player-overlay-renderer,
+    .yt-thumbnail-view-model--large, .collections-stack-wiz__collection-stack1--large{
         border-radius: var(--feed-thumbnail-preview);
     }
 
@@ -582,7 +596,12 @@
         margin-left: -12px;
     }
     
-    .ytChipShapeOnlyTextPadding { border: 1px; border-radius: var(--button-corner-radius) }
+    #button.ytd-menu-renderer yt-icon.ytd-menu-renderer { 
+        margin-right: 1000em; 
+        border-radius: var(--button-corner-radius)
+    }
+    
+    .ytChipShapeOnlyTextPadding { border: 1px; border-radius: var(--button-corner-radius)     }
 
 /** Searchbox Section **/
     /* Search Box */
