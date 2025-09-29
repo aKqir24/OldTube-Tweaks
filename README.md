@@ -3,9 +3,9 @@ Interface tweaks for an nostalgic experience in youtube... [![Install Directly W
 
 ### Features
   - Compact Side Menu Buttons
+  - Minor UI Improvements
   - Theme Colors ( Depending On The Theme Level)
-  - Primary & Secondary Color ( Gradient )
-  - Minor UI Improvements ( Separator )
+  - Change Primary & Secondary Color ( Gradient )
   - Border Radius Adjustment For Every Corner
   - Shorts Section Toggle
   - Video Control Shadows
