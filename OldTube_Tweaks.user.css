@@ -123,6 +123,7 @@
   }
   
   ytd-comment-view-model { margin-top: 10px }
+  .yt-spec-button-shape-next--size-m { margin-left: 7px }
 
   
   ytd-watch-metadata[actions-on-separate-line] #actions.ytd-watch-metadata ytd-menu-renderer.ytd-watch-metadata {
