@@ -132,7 +132,7 @@
   }
 
   #placeholder-area.ytd-comment-simplebox-renderer,
-  .focused-line.tp-yt-paper-input-container { border-radius: 0; }
+  .focused-line.tp-yt-paper-input-container { border-radius: var(--search-box-radius); }
 
   a.yt-simple-endpoint.yt-formatted-string { color: var(--yt-spec-call-to-action) }
   #video-title.ytd-playlist-video-renderer { color: white }
@@ -145,6 +145,7 @@
   }
   .yt-spec-touch-feedback-shape__fill, .yt-spec-touch-feedback-shape__stroke { 
       color: var(--button-des-text);  }
+  
   /** Suggestions Grid */
   ytd-rich-item-renderer[rendered-from-rich-grid] {
     border-radius: var(--feed-thumbnail-preview);
