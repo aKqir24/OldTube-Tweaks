@@ -7,7 +7,6 @@ Interface tweaks for an nostalgic experience in youtube... [![Install Directly W
   - Primary & Secondary Color ( Gradient )
   - Minor UI Improvements ( Separator )
   - Border Radius Adjustment For Every Corner
-  - Uppercase Button Font ( For Better View )
   - Shorts Section Toggle
   - Video Control Shadows
   - Old Padding & Margins
