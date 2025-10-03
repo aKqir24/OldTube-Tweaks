@@ -13,7 +13,6 @@
 @var number feedVideoRadius "Video Radius" [0, 0, 20, 5, "px"]
 @var number buttonRadius "Buttons Radius" [0, 0, 20, 5, "px"]
 @var number searchBoxRadius "Searchbox Radius" [0, 0, 20, 5, "px"]
-@var range videoCardThumbnail "Video Margins" [1, 0, 10, 1, "px"]
 
 @var checkbox controlShadow 'Controls Shadow' 1
 @var checkbox removeShorts  'Remove Shorts' 1
