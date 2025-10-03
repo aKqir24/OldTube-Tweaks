@@ -5,11 +5,11 @@
 @namespace      https://userstyles.world/user/aKqir24
 @homepageURL    https://github.com/aKqir24/OldTube-Tweaks
 @supportURL     https://github.com/aKqir24/OldTube-Tweaks/issues
-@version        1.3.5
+@version        1.3.6
 @license        MIT
 @preprocessor   stylus
 
-@var number descriptionRadius "Panels Radius" [0, 0, 20, 5, "px"]
+@var number panelsRadius "Panels Radius" [0, 0, 20, 5, "px"]
 @var number feedVideoRadius "Video Radius" [0, 0, 20, 5, "px"]
 @var number buttonRadius "Buttons Radius" [0, 0, 20, 5, "px"]
 @var number searchBoxRadius "Searchbox Radius" [0, 0, 20, 5, "px"]
@@ -33,7 +33,7 @@
     --button-corner-radius: buttonRadius;
     --search-box-color: var(--yt-spec-call-to-action);
     --corner-radius-video-player: feedVideoRadius;
-    --description-corner: descriptionRadius;
+    --panels-corner: panelsRadius;
     --feed-thumbnail-preview: feedVideoRadius;
     --video-card-preview: videoCardThumbnail;
     --search-box-radius: searchBoxRadius;
@@ -54,7 +54,6 @@
       --highlight-link-normal: accentColor1;
       --highlight-link-hover: accentColor2;
       --highlight-link-visited: accentColor2;
-       
       --button-des-text: accentColor1;
       --search-box-color: accentColor1;
     }
@@ -71,9 +70,7 @@
   }
 
   /** Controls Shadow */
-  if controlShadow == 0 {
-    .ytp-gradient-top, .ytp-gradient-bottom { display: none; }
-  }
+  if controlShadow == 0 { .ytp-gradient-top, .ytp-gradient-bottom { display: none } }
 
   /** Compact Menu */
   if compactMenu {
@@ -119,17 +116,16 @@
   ytd-playlist-video-renderer, #description.ytd-watch-metadata, .immersive-header-container.ytd-playlist-header-renderer,
   ytd-comment-replies-renderer, ytd-comment-view-model, ytd-multi-page-menu-renderer,
   .yt-image-banner-view-model-wiz--inset {
-    border-radius: var(--description-corner) !important;
+    border-radius: var(--panels-corner) !important;
   }
   
   ytd-comment-view-model { margin-top: 10px }
   ytd-watch-metadata[actions-on-separate-line] #actions.ytd-watch-metadata ytd-menu-renderer.ytd-watch-metadata {
-    -moz-box-pack: end;
-    justify-content: end;
+    -moz-box-pack: end; justify-content: end;
   }
 
   #placeholder-area.ytd-comment-simplebox-renderer,
-  .focused-line.tp-yt-paper-input-container { border-radius: 0; }
+  .focused-line.tp-yt-paper-input-container { border-radius: var(--panels-corner); }
 
   .yt-core-attributed-string__link--call-to-action-color, 
   a.yt-simple-endpoint.yt-formatted-string { color: var(--highlight-link-normal) }
@@ -139,8 +135,7 @@
   #video-title.ytd-playlist-video-renderer { color: white }
   .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text,
   .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline {
-    color: var(--button-des-text);
-    background-color: transparent;
+    color: var(--button-des-text); background-color: transparent;
   }
   .yt-spec-touch-feedback-shape__fill,
   .yt-spec-touch-feedback-shape__stroke { color: var(--button-des-text);  }
@@ -154,25 +149,17 @@
   ytd-rich-item-renderer[rendered-from-rich-grid][is-in-first-column] { margin-left: 10px; }
 
   /** Thumbnails & Player */
-  .ytCollectionsStackCollectionStack1,
-  .ytCollectionsStackCollectionStack2,
-  .ytp-videowall-still-round-medium .ytp-videowall-still-image,
-  .ytThumbnailViewModelLarge, .ytThumbnailViewModelMedium,
-  .ytd-thumbnail, ytd-thumbnail[size="large"] a.ytd-thumbnail,
-  ytd-thumbnail[size="large"]::before, ytd-thumbnail.ytd-rich-grid-media,
-  ytd-playlist-thumbnail.ytd-rich-grid-media,
-  ytd-watch-flexy[rounded-player] #ytd-player.ytd-watch-flexy,
-  .collections-stack-wiz__collection-stack1--medium,
-  .collections-stack-wiz__collection-stack1--large,
-  .collections-stack-wiz__collection-stack2 {
+  .ytCollectionsStackCollectionStack1, .ytCollectionsStackCollectionStack2,
+  .ytp-videowall-still-round-medium .ytp-videowall-still-image, .ytThumbnailViewModelLarge,
+  .ytThumbnailViewModelMedium, .ytd-thumbnail, ytd-thumbnail[size="large"] a.ytd-thumbnail,
+  ytd-thumbnail[size="large"]::before, ytd-thumbnail.ytd-rich-grid-media, ytd-playlist-thumbnail.ytd-rich-grid-media,
+  ytd-watch-flexy[rounded-player] #ytd-player.ytd-watch-flexy, .collections-stack-wiz__collection-stack1--medium,
+  .collections-stack-wiz__collection-stack1--large, .collections-stack-wiz__collection-stack2 {
     border-radius: var(--feed-thumbnail-preview) !important;
   }
-  
   .html5-video-player, ytd-watch-flexy[rounded-player-large][default-layout] #ytd-player.ytd-watch-flexy,
-  #card.ytd-miniplayer, #modern-card.ytd-miniplayer,
-  .player-container.ytd-reel-video-renderer,
-  .reel-video-in-sequence-thumbnail.ytd-shorts,
-  .ytp-player-minimized .html5-main-video,
+  #card.ytd-miniplayer, #modern-card.ytd-miniplayer, .player-container.ytd-reel-video-renderer,
+  .reel-video-in-sequence-thumbnail.ytd-shorts, .ytp-player-minimized .html5-main-video,
   .ytp-player-minimized .ytp-miniplayer-scrim {
     border-radius: var(--corner-radius-video-player);
   }
@@ -180,10 +167,8 @@
   .yt-lockup-metadata-view-model--compact .yt-lockup-metadata-view-model__title { margin-right: 10px }
 
   /** Progressbar */
-  .ytProgressBarLinePlayerProgressBarLoaded,
-  .ytProgressBarLineProgressBarHovered,
-  .ytProgressBarLineProgressBarPlayed,
-  .ytProgressBarLineProgressBarPlayedRefresh,
+  .ytProgressBarLinePlayerProgressBarLoaded, .ytProgressBarLineProgressBarHovered,
+  .ytProgressBarLineProgressBarPlayed, .ytProgressBarLineProgressBarPlayedRefresh,
   .ytp-play-progress,
   ytd-thumbnail-overlay-resume-playback-renderer[enable-refresh-signature-moments-web] #progress.ytd-thumbnail-overlay-resume-playback-renderer {
     background: linear-gradient(to right, var(--progressbar-color-left) 80%, var(--progressbar-color-right) 100%);
@@ -194,7 +179,7 @@
   }
 
   /** Buttons */
-  .yt-spec-button-shape-next--size-m,
+  .yt-spec-button-shape-next--size-m, 
   #voice-search-button.ytd-masthead, .ytChipShapeChip,
   .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
     border: 0; color: var(--yt-spec-text-primary);
@@ -220,7 +205,8 @@
     color: var(--yt-spec-text-secondary) !important;
     background-color: var(--yt-spec-badge-chip-background) !important;
   }
-
+  #endpoint.yt-simple-endpoint.ytd-guide-entry-renderer { border-radius: var(--button-corner-radius) !important }
+  
   /** Searchbox */
   .ytSearchboxComponentInputBoxDark,
   .ytSearchboxComponentSearchButtonDark { border-radius: var(--search-box-radius) }
