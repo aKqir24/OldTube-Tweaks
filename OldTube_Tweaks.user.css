@@ -5,7 +5,7 @@
 @namespace      https://userstyles.world/user/aKqir24
 @homepageURL    https://github.com/aKqir24/OldTube-Tweaks
 @supportURL     https://github.com/aKqir24/OldTube-Tweaks/issues
-@version        1.3.4
+@version        1.3.5
 @license        MIT
 @preprocessor   stylus
 
@@ -40,7 +40,9 @@
     --search-box-radius: searchBoxRadius;
     --progressbar-color-right: #ff2791;
     --progressbar-color-left: #f03;
-    --highlight-link: #2091f0;
+    --yt-endpoint-hover-color: #2091f0
+    --highlight-link-normal: #2091f0;
+    --highlight-link-visited: #2091f088
     --button-des-text: #2091f0;
     --dislike-color: red;
     --like-color: lime;
@@ -52,7 +54,10 @@
       --subscribe-button-color: accentColor1;
       --progressbar-color-left: accentColor1;
       --progressbar-color-right: accentColor2;
-      --yt-attributed-string-link-hover-color: accentColor2;
+      --highlight-link-normal: accentColor1;
+      --highlight-link-hover: accentColor2;
+      --highlight-link-visited: accentColor2;
+       
       --button-des-text: accentColor1;
       --search-box-color: accentColor1;
     }
@@ -80,7 +85,7 @@
     ytd-mini-guide-entry-renderer, a.ytd-mini-guide-entry-renderer {
       border-radius: var(--button-corner-radius);
       width: 54px;
-      padding: 14px 0 12px;
+      padding: 12px 0 10px;
     }
   }
 
@@ -101,6 +106,7 @@
 
   /** Remove Shorts */
   if removeShorts {
+    .ytGridShelfViewModelHost,
     ytd-rich-shelf-renderer[standard-shelf-margins][is-shorts],
     ytd-exploratory-results-renderer.ytd-item-section-renderer,
     ytd-horizontal-card-list-renderer.ytd-item-section-renderer:not(:first-child),
@@ -113,39 +119,35 @@
 
   /** Panels & UI Tweaks */
   .page-header-view-model-wiz--display-as-sidebar .page-header-view-model-wiz__page-header-background,
-  ytd-playlist-video-renderer, #description.ytd-watch-metadata,
-  .immersive-header-container.ytd-playlist-header-renderer,
-  ytd-comment-replies-renderer,
-  ytd-comment-view-model,
-  ytd-multi-page-menu-renderer,
+  ytd-playlist-video-renderer, #description.ytd-watch-metadata, .immersive-header-container.ytd-playlist-header-renderer,
+  ytd-comment-replies-renderer, ytd-comment-view-model, ytd-multi-page-menu-renderer,
   .yt-image-banner-view-model-wiz--inset {
     border-radius: var(--description-corner) !important;
   }
   
   ytd-comment-view-model { margin-top: 10px }
-  .yt-spec-button-shape-next--size-m { margin-left: 7px }
-
-  
   ytd-watch-metadata[actions-on-separate-line] #actions.ytd-watch-metadata ytd-menu-renderer.ytd-watch-metadata {
     -moz-box-pack: end;
     justify-content: end;
   }
 
   #placeholder-area.ytd-comment-simplebox-renderer,
-  .focused-line.tp-yt-paper-input-container { border-radius: var(--search-box-radius); }
+  .focused-line.tp-yt-paper-input-container { border-radius: 0; }
 
-  a.yt-simple-endpoint.yt-formatted-string { color: var(--yt-spec-call-to-action) }
+  .yt-core-attributed-string__link--call-to-action-color, 
+  a.yt-simple-endpoint.yt-formatted-string { color: var(--highlight-link-normal) }
+  .yt-core-attributed-string__link--call-to-action-color:hover, 
+  a.yt-simple-endpoint.yt-formatted-string:hover { color: var(--highlight-link-hover) !important}
+  a.yt-simple-endpoint.yt-formatted-string:visited { color: var(--highlight-link-visited) }
   #video-title.ytd-playlist-video-renderer { color: white }
-  .yt-core-attributed-string__link--call-to-action-color,
-  .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color,
   .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text,
   .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline {
     color: var(--button-des-text);
     background-color: transparent;
   }
-  .yt-spec-touch-feedback-shape__fill, .yt-spec-touch-feedback-shape__stroke { 
-      color: var(--button-des-text);  }
-  
+  .yt-spec-touch-feedback-shape__fill,
+  .yt-spec-touch-feedback-shape__stroke { color: var(--button-des-text);  }
+      
   /** Suggestions Grid */
   ytd-rich-item-renderer[rendered-from-rich-grid] {
     border-radius: var(--feed-thumbnail-preview);
@@ -155,6 +157,8 @@
   ytd-rich-item-renderer[rendered-from-rich-grid][is-in-first-column] { margin-left: 10px; }
 
   /** Thumbnails & Player */
+  .ytCollectionsStackCollectionStack1,
+  .ytCollectionsStackCollectionStack2,
   .ytThumbnailViewModelLarge, .ytThumbnailViewModelMedium,
   .ytd-thumbnail, ytd-thumbnail[size="large"] a.ytd-thumbnail,
   ytd-thumbnail[size="large"]::before, ytd-thumbnail.ytd-rich-grid-media,
@@ -165,6 +169,7 @@
   .collections-stack-wiz__collection-stack2 {
     border-radius: var(--feed-thumbnail-preview) !important;
   }
+  
   .html5-video-player, ytd-watch-flexy[rounded-player-large][default-layout] #ytd-player.ytd-watch-flexy,
   #card.ytd-miniplayer, #modern-card.ytd-miniplayer,
   .player-container.ytd-reel-video-renderer,
@@ -174,7 +179,7 @@
     border-radius: var(--corner-radius-video-player);
   }
   
-  .yt-lockup-metadata-view-model--compact .yt-lockup-metadata-view-model__title { margin-left: 10px }
+  .yt-lockup-metadata-view-model--compact .yt-lockup-metadata-view-model__title { margin-right: 10px }
 
   /** Progressbar */
   .ytProgressBarLinePlayerProgressBarLoaded,
