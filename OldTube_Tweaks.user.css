@@ -155,8 +155,9 @@
     box-shadow: .4px .4px 1px var(--yt-spec-static-grey);
   }
   ytd-rich-item-renderer[rendered-from-rich-grid][is-in-first-column] { margin-left: 10px }
-  .yt-lockup-metadata-view-model, #content.ytd-rich-item-renderer { margin: -2.8px 2px -8px !important}
-  .yt-lockup-view-model--wrapper { margin-left: -4px; width: 102%; padding-top: 2px }
+  .yt-lockup-view-model--wrapper { margin-left: -4px; width: 102%; padding-top: 2.8px }
+  .yt-lockup-metadata-view-model { margin: -2.8px 2px -8px !important }
+  #content.ytd-rich-item-renderer { padding: 18px }
 
   /** Thumbnails & Player */
   .ytCollectionsStackCollectionStack1, .ytCollectionsStackCollectionStack2,
