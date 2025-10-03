@@ -29,7 +29,6 @@
 
 @-moz-document domain("youtube.com") {
   :root {
-    --sub-white-text-btn: #f2f2f2;
     --button-corner-radius: buttonRadius;
     --search-box-color: var(--yt-spec-call-to-action);
     --corner-radius-video-player: feedVideoRadius;
@@ -137,7 +136,8 @@
   #info .yt-simple-endpoint.yt-formatted-string { color: var(--highlight-link-normal) !important }
   .ytd-text-inline-expander .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color:hover, 
   #info .yt-simple-endpoint.yt-formatted-string:hover { color: var(--highlight-link-hover) !important}
-  a.yt-simple-endpoint.yt-formatted-string:visited { color: var(--highlight-link-visited) !important}
+  .ytd-text-inline-expander .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color:visited,             
+  #info .yt-simple-endpoint.yt-formatted-string:visited { color: var(--highlight-link-visited) !important}
   #video-title.ytd-playlist-video-renderer { color: white }
   .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text,
   .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline {
