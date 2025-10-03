@@ -156,6 +156,7 @@
   /** Thumbnails & Player */
   .ytCollectionsStackCollectionStack1,
   .ytCollectionsStackCollectionStack2,
+  .ytp-videowall-still-round-medium .ytp-videowall-still-image,
   .ytThumbnailViewModelLarge, .ytThumbnailViewModelMedium,
   .ytd-thumbnail, ytd-thumbnail[size="large"] a.ytd-thumbnail,
   ytd-thumbnail[size="large"]::before, ytd-thumbnail.ytd-rich-grid-media,
