@@ -100,10 +100,11 @@
 
   /** Remove Shorts */
   if removeShorts {
-    .ytGridShelfViewModelHost,
+    .ytGridShelfViewModelHost, 
     ytd-rich-shelf-renderer[standard-shelf-margins][is-shorts],
     ytd-exploratory-results-renderer.ytd-item-section-renderer,
     ytd-horizontal-card-list-renderer.ytd-item-section-renderer:not(:first-child),
+    ytd-rich-shelf-renderer[is-shorts][is-truncated] #dismissible.ytd-rich-shelf-renderer,
     ytd-rich-shelf-renderer[standard-shelf-margins] #dismissible.ytd-rich-shelf-renderer,
     ytd-reel-shelf-renderer.ytd-item-section-renderer {
       display: none !important;
@@ -112,10 +113,16 @@
   }
 
   /** Panels & UI Tweaks */
+  @media (max-width: 656px) {
+    ytd-masthead:not([ai-companion-enabled]) #voice-search-button.ytd-masthead {
+        margin-right: 10px;
+        background-color: transparent;
+    }
+  }
   .page-header-view-model-wiz--display-as-sidebar .page-header-view-model-wiz__page-header-background,
   ytd-playlist-video-renderer, #description.ytd-watch-metadata, .immersive-header-container.ytd-playlist-header-renderer,
   ytd-comment-replies-renderer, ytd-comment-view-model, ytd-multi-page-menu-renderer,
-  .yt-image-banner-view-model-wiz--inset {
+  .yt-image-banner-view-model-wiz--inset, ytd-rich-metadata-renderer[rounded] {
     border-radius: var(--panels-corner) !important;
   }
   
@@ -126,12 +133,11 @@
 
   #placeholder-area.ytd-comment-simplebox-renderer,
   .focused-line.tp-yt-paper-input-container { border-radius: var(--panels-corner); }
-
-  .yt-core-attributed-string__link--call-to-action-color, 
-  a.yt-simple-endpoint.yt-formatted-string { color: var(--highlight-link-normal) }
-  .yt-core-attributed-string__link--call-to-action-color:hover, 
-  a.yt-simple-endpoint.yt-formatted-string:hover { color: var(--highlight-link-hover) !important}
-  a.yt-simple-endpoint.yt-formatted-string:visited { color: var(--highlight-link-visited) }
+  .ytd-text-inline-expander .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color,             
+  #info .yt-simple-endpoint.yt-formatted-string { color: var(--highlight-link-normal) !important }
+  .ytd-text-inline-expander .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color:hover, 
+  #info .yt-simple-endpoint.yt-formatted-string:hover { color: var(--highlight-link-hover) !important}
+  a.yt-simple-endpoint.yt-formatted-string:visited { color: var(--highlight-link-visited) !important}
   #video-title.ytd-playlist-video-renderer { color: white }
   .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text,
   .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline {
@@ -141,16 +147,18 @@
   .yt-spec-touch-feedback-shape__stroke { color: var(--button-des-text);  }
       
   /** Suggestions Grid */
+  .yt-simple-endpoint style-scope yt-formatted-string, { color: var(--yt-spec-text-primary) !important }
   ytd-rich-item-renderer[rendered-from-rich-grid] {
     border-radius: var(--feed-thumbnail-preview);
     margin: 0 1.6px 1.2% 12px;
     box-shadow: 0 0 2px var(--yt-spec-static-grey);
   }
   ytd-rich-item-renderer[rendered-from-rich-grid][is-in-first-column] { margin-left: 10px; }
+  .yt-lockup-metadata-view-model, #content.ytd-rich-item-renderer { padding: 8px}
 
   /** Thumbnails & Player */
   .ytCollectionsStackCollectionStack1, .ytCollectionsStackCollectionStack2,
-  .ytp-videowall-still-round-medium .ytp-videowall-still-image, .ytThumbnailViewModelLarge,
+  .ytp-videowall-still-round-medium .ytp-videowall-still-image, .ytThumbnailViewModelLarge, .shortsLockupViewModelHostThumbnailParentContainerRounded,
   .ytThumbnailViewModelMedium, .ytd-thumbnail, ytd-thumbnail[size="large"] a.ytd-thumbnail,
   ytd-thumbnail[size="large"]::before, ytd-thumbnail.ytd-rich-grid-media, ytd-playlist-thumbnail.ytd-rich-grid-media,
   ytd-watch-flexy[rounded-player] #ytd-player.ytd-watch-flexy, .collections-stack-wiz__collection-stack1--medium,
@@ -169,7 +177,7 @@
   /** Progressbar */
   .ytProgressBarLinePlayerProgressBarLoaded, .ytProgressBarLineProgressBarHovered,
   .ytProgressBarLineProgressBarPlayed, .ytProgressBarLineProgressBarPlayedRefresh,
-  .ytp-play-progress,
+  .ytp-play-progress, .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment,
   ytd-thumbnail-overlay-resume-playback-renderer[enable-refresh-signature-moments-web] #progress.ytd-thumbnail-overlay-resume-playback-renderer {
     background: linear-gradient(to right, var(--progressbar-color-left) 80%, var(--progressbar-color-right) 100%);
   }
@@ -205,11 +213,13 @@
     color: var(--yt-spec-text-secondary) !important;
     background-color: var(--yt-spec-badge-chip-background) !important;
   }
-  #endpoint.yt-simple-endpoint.ytd-guide-entry-renderer { border-radius: var(--button-corner-radius) !important }
+  #endpoint.yt-simple-endpoint.ytd-guide-entry-renderer { border-radius: var(--button-corner-radius) !important } 
+  #voice-search-button.ytd-masthead { backdrop-filter: blur(4px) !important; background-color: rgba(255,255,255,0.1) !important }
+  .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--text { background-color: transparent  } 
   
   /** Searchbox */
-  .ytSearchboxComponentInputBoxDark,
-  .ytSearchboxComponentSearchButtonDark { border-radius: var(--search-box-radius) }
+  .ytSearchboxComponentInputBoxDark { backdrop-filter: blur(4px); background: rgba(26, 25, 25, .49) !important}
+  .ytSearchboxComponentSearchButtonDark, .ytSearchboxComponentInputBoxDark { border-radius: var(--search-box-radius) }
   .ytSearchboxComponentInputBoxDark.ytSearchboxComponentInputBoxHasFocus { border-color: var(--search-box-color) }
   .ytSuggestionComponentRemoveLinkDark { color: var(--search-box-color) }
 }
