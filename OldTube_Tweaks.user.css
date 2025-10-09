@@ -5,7 +5,7 @@
 @namespace      https://userstyles.world/user/aKqir24
 @homepageURL    https://github.com/aKqir24/OldTube-Tweaks
 @supportURL     https://github.com/aKqir24/OldTube-Tweaks/issues
-@version        1.3.6
+@version        1.3.7
 @license        MIT
 @preprocessor   stylus
 
@@ -160,6 +160,7 @@
   #content.ytd-rich-item-renderer { padding: 18px }
 
   /** Thumbnails & Player */
+  .ytImageBannerViewModelSmallInset, .ytImageBannerViewModelInset,
   .ytCollectionsStackCollectionStack1, .ytCollectionsStackCollectionStack2,
   .ytp-videowall-still-round-medium .ytp-videowall-still-image, .ytThumbnailViewModelLarge,
   .shortsLockupViewModelHostThumbnailParentContainerRounded, .ytThumbnailViewModelMedium,
@@ -179,6 +180,7 @@
   .yt-lockup-metadata-view-model--compact .yt-lockup-metadata-view-model__title { margin-right: 10px }
 
   /** Progressbar */
+  #progress.ytd-thumbnail-overlay-resume-playback-renderer,
   .ytProgressBarLinePlayerProgressBarLoaded, .ytProgressBarLineProgressBarHovered,
   .ytProgressBarLineProgressBarPlayed, .ytProgressBarLineProgressBarPlayedRefresh,
   .ytp-play-progress, .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment,
@@ -191,17 +193,18 @@
   }
 
   /** Buttons */
+    .arrow.yt-horizontal-list-renderer,
   .yt-spec-button-shape-next--size-m, 
   #voice-search-button.ytd-masthead, .ytChipShapeChip,
   .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
     border: 0; color: var(--yt-spec-text-primary);
     background-color: var(--yt-emoji-picker-variant-selector-bg-color);
-    border-radius: var(--button-corner-radius);
+    border-radius: var(--button-corner-radius)
   }
   yt-interaction.circular .fill.yt-interaction { border-radius: var(--button-corner-radius) }
   .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text { color: var(--yt-spec-icon-disabled) }
   .yt-spec-touch-feedback-shape--touch-response .yt-spec-touch-feedback-shape__fill { 
-      background-color: var(--yt-spec-outline-inverse-medium) !important;
+      background-color: var(--yt-spec-inverted-background) !important;
       color: var(--yt-spec-text-primary) }
   .yt-spec-button-shape-next { background-color: transparent }
   .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--filled,
@@ -214,13 +217,16 @@
   #subscribe button[aria-label^="Unsubscribe"],
   #subscribe button.yt-spec-button-shape-next--tonal {
     border-radius: var(--button-corner-radius);
-    color: var(--yt-spec-text-secondary) !important;
+    color: var(--yt-spec-text-primary) !important;
     background-color: var(--yt-spec-badge-chip-background) !important;
   }
   #endpoint.yt-simple-endpoint.ytd-guide-entry-renderer { border-radius: var(--button-corner-radius) !important } 
   #voice-search-button.ytd-masthead { backdrop-filter: blur(4px) !important; background-color: rgba(255,255,255,0.1) !important }
   .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--text { background-color: transparent  } 
-  
+  .ytChipShapeChip:hover { opacity: 0.8 }
+  .ytChipShapeActive { color: var(--yt-spec-text-primary-inverse); background-color: var(--yt-spec-text-primary) }
+  #subscribe.ytd-grid-channel-renderer { padding: 1px; margin-top: 8px }
+    
   /** Searchbox */
   .ytSearchboxComponentInputBoxDark { backdrop-filter: blur(4px); background: rgba(26, 25, 25, .49) !important}
   .ytSearchboxComponentSearchButtonDark, .ytSearchboxComponentInputBoxDark { border-radius: var(--search-box-radius) }
