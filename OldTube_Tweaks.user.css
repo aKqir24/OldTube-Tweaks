@@ -5,7 +5,7 @@
 @namespace      https://userstyles.world/user/aKqir24
 @homepageURL    https://github.com/aKqir24/OldTube-Tweaks
 @supportURL     https://github.com/aKqir24/OldTube-Tweaks/issues
-@version        1.3.7
+@version        1.3.8
 @license        MIT
 @preprocessor   stylus
 
@@ -119,6 +119,7 @@
         background-color: transparent;
     }
   }
+  ytd-feed-nudge-renderer[rounded-container] #dismissible.ytd-feed-nudge-renderer,
   .page-header-view-model-wiz--display-as-sidebar .page-header-view-model-wiz__page-header-background,
   ytd-playlist-video-renderer, #description.ytd-watch-metadata, .immersive-header-container.ytd-playlist-header-renderer,
   ytd-comment-replies-renderer, ytd-comment-view-model, ytd-multi-page-menu-renderer,
@@ -157,10 +158,14 @@
   ytd-rich-item-renderer[rendered-from-rich-grid][is-in-first-column] { margin-left: 10px }
   .yt-lockup-view-model--wrapper { margin-left: -4px; width: 102%; padding-top: 2.8px }
   .yt-lockup-metadata-view-model { margin: -2.8px 2px -8px !important }
-  #content.ytd-rich-item-renderer { padding: 18px }
+  #content.ytd-rich-item-renderer { padding: 12px 8px 18px 8px }
 
   /** Thumbnails & Player */
-  .ytImageBannerViewModelSmallInset, .ytImageBannerViewModelInset,
+  ytd-expandable-metadata-renderer:hover,
+  ytd-expandable-metadata-renderer:not([is-expanded]),
+  .yt-spec-touch-feedback-shape--thumbnail-size-large .yt-spec-touch-feedback-shape__stroke,
+  .ytImageBannerViewModelSmallInset, .ytImageBannerViewModelInset, 
+  .yt-spec-touch-feedback-shape--thumbnail-size-large .yt-spec-touch-feedback-shape__fill,
   .ytCollectionsStackCollectionStack1, .ytCollectionsStackCollectionStack2,
   .ytp-videowall-still-round-medium .ytp-videowall-still-image, .ytThumbnailViewModelLarge,
   .shortsLockupViewModelHostThumbnailParentContainerRounded, .ytThumbnailViewModelMedium,
@@ -225,7 +230,8 @@
   .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--text { background-color: transparent  } 
   .ytChipShapeChip:hover { opacity: 0.8 }
   .ytChipShapeActive { color: var(--yt-spec-text-primary-inverse); background-color: var(--yt-spec-text-primary) }
-  #subscribe.ytd-grid-channel-renderer { padding: 1px; margin-top: 8px }
+  #subscribe.ytd-grid-channel-renderer, .ytSpecButtonViewModelHost { padding: 1px; margin-top: 8px }
+  ytd-comment-replies-renderer #creator-thumbnail.ytd-comment-replies-renderer { padding-right: 8px; padding-left: 2px }
     
   /** Searchbox */
   .ytSearchboxComponentInputBoxDark { backdrop-filter: blur(4px); background: rgba(26, 25, 25, .49) !important}
