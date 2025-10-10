@@ -131,7 +131,8 @@
   ytd-watch-metadata[actions-on-separate-line] #actions.ytd-watch-metadata ytd-menu-renderer.ytd-watch-metadata {
     -moz-box-pack: end; justify-content: end;
   }
-
+  
+  .ytVideoMetadataCarouselViewModelHost,
   #placeholder-area.ytd-comment-simplebox-renderer,
   .focused-line.tp-yt-paper-input-container { border-radius: var(--panels-corner); }
   .ytd-text-inline-expander .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color,             
@@ -164,11 +165,11 @@
   ytd-expandable-metadata-renderer:hover,
   ytd-expandable-metadata-renderer:not([is-expanded]),
   .yt-spec-touch-feedback-shape--thumbnail-size-large .yt-spec-touch-feedback-shape__stroke,
-  .ytImageBannerViewModelSmallInset, .ytImageBannerViewModelInset, 
+  .ytImageBannerViewModelSmallInset, .ytImageBannerViewModelInset, .ytThumbnailViewModelLarge,
   .yt-spec-touch-feedback-shape--thumbnail-size-large .yt-spec-touch-feedback-shape__fill,
   .ytCollectionsStackCollectionStack1, .ytCollectionsStackCollectionStack2,
-  .ytp-videowall-still-round-medium .ytp-videowall-still-image, .ytThumbnailViewModelLarge,
-  .shortsLockupViewModelHostThumbnailParentContainerRounded, .ytThumbnailViewModelMedium,
+  .ytp-videowall-still-round-medium .ytp-videowall-still-image, .ytThumbnailViewModelMedium,
+  .shortsLockupViewModelHostThumbnailParentContainerRounded,
   .ytd-thumbnail, ytd-thumbnail[size="large"] a.ytd-thumbnail, ytd-thumbnail[size="large"]::before,
   ytd-thumbnail.ytd-rich-grid-media, ytd-playlist-thumbnail.ytd-rich-grid-media,
   ytd-watch-flexy[rounded-player] #ytd-player.ytd-watch-flexy, .collections-stack-wiz__collection-stack1--medium,
@@ -230,7 +231,7 @@
   .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--text { background-color: transparent  } 
   .ytChipShapeChip:hover { opacity: 0.8 }
   .ytChipShapeActive { color: var(--yt-spec-text-primary-inverse); background-color: var(--yt-spec-text-primary) }
-  #subscribe.ytd-grid-channel-renderer, .ytSpecButtonViewModelHost { padding: 1px; margin-top: 8px }
+  #subscribe.ytd-grid-channel-renderer, .yt-lockup-metadata-view-model__menu-button { padding: 1px; margin-top: 8px }
   ytd-comment-replies-renderer #creator-thumbnail.ytd-comment-replies-renderer { padding-right: 8px; padding-left: 2px }
     
   /** Searchbox */
