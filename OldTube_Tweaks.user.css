@@ -46,8 +46,7 @@
       --highlight-link-hover: accentColor1; --highlight-link-visited: accentColor1;
       --button-des-text: accentColor1; --search-box-color: accentColor2 }
     html[dark], [dark] { --yt-spec-red-indicator: accentColor1 }
-  } else if accentChoice == Mini {
-    :root { --search-box-color: accentColor1; --subscribe-button-color: accentColor1 }
+  } else if accentChoice == Mini { :root { --search-box-color: accentColor1; --subscribe-button-color: accentColor1 }
   } else if accentChoice == None { html[dark], [dark] { --yt-spec-red-indicator: linear-gradient(to right, #f03 80%, #ff2791 100%) }}
 
   /** Controls Shadow */
@@ -76,7 +75,7 @@
 
   /** Panels & UI Tweaks */
   @media (max-width: 656px) {
-    ytd-masthead:not([ai-companion-enabled]) #voice-search-button.ytd-masthead { margin-right: 10px; background-color: transparent } }
+  ytd-masthead:not([ai-companion-enabled]) #voice-search-button.ytd-masthead { margin-right: 10px; background-color: transparent } }
   ytd-comment-view-model { margin-top: 4px }
   #contents.ytd-rich-grid-renderer { padding-top: 2.3px }
   tp-yt-paper-item.ytd-guide-entry-renderer { padding: 0 10px }
@@ -120,7 +119,7 @@
   .html5-video-player, ytd-watch-flexy[rounded-player-large][default-layout] #ytd-player.ytd-watch-flexy, #card.ytd-miniplayer,
   #modern-card.ytd-miniplayer, .player-container.ytd-reel-video-renderer, .reel-video-in-sequence-thumbnail.ytd-shorts,
   .ytp-player-minimized .html5-main-video, .ytp-player-minimized .ytp-miniplayer-scrim { border-radius: var(--corner-radius-video-player) }
-  .yt-spec-touch-feedback-shape--thumbnail-size-large .yt-spec-touch-feedback-shape__hover-effect { margin: -6px -2px -8px -2px !important }
+  .yt-spec-touch-feedback-shape--thumbnail-size-large .yt-spec-touch-feedback-shape__hover-effect { margin: -6px -4px -8px -4px !important }
   .yt-lockup-metadata-view-model--compact .yt-lockup-metadata-view-model__title { margin-right: 10px }
 
   /** Progressbar */
@@ -139,7 +138,7 @@
   yt-interaction.circular .fill.yt-interaction { border-radius: var(--button-corner-radius) }
   .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text { color: var(--yt-spec-icon-disabled) }
   .yt-spec-touch-feedback-shape--touch-response .yt-spec-touch-feedback-shape__fill { 
-   background-color: var(--yt-spec-inverted-background) !important;
+   background-color: var(--yt-spec-inverted-background) !important; 
    color: var(--yt-spec-text-primary) }
    button.ytd-topbar-menu-button-renderer:hover { border-color: red !important}
   .yt-spec-button-shape-next { background-color: transparent }
