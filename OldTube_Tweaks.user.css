@@ -9,10 +9,10 @@
 @license        MIT
 @preprocessor   stylus
 
-@var number panelsRadius "Panels Radius" [0, 0, 20, 5, "px"]
-@var number feedVideoRadius "Video Radius" [0, 0, 20, 5, "px"]
-@var number buttonRadius "Buttons Radius" [0, 0, 20, 5, "px"]
-@var number searchBoxRadius "Searchbox Radius" [0, 0, 20, 5, "px"]
+@var number panelsRadius "Panels Radius" [0, 0, 20, 2, "px"]
+@var number feedVideoRadius "Video Radius" [0, 0, 24, 2, "px"]
+@var number buttonRadius "Buttons Radius" [0, 0, 24, 2, "px"]
+@var number searchBoxRadius "Searchbox Radius" [0, 0, 24, 2, "px"]
 
 @var checkbox controlShadow 'Controls Shadow' 1
 @var checkbox removeShorts  'Remove Shorts' 1
@@ -56,10 +56,8 @@
 
   /** Compact Menu */
   if compactMenu {
-    tp-yt-paper-item.ytd-guide-entry-renderer { padding: 0 1px }
     .title.ytd-mini-guide-entry-renderer { display: none }
-    ytd-mini-guide-entry-renderer, a.ytd-mini-guide-entry-renderer { border-radius: var(--button-corner-radius); width: 54px; padding: 12px 0 10px }
-  }
+    ytd-mini-guide-entry-renderer, a.ytd-mini-guide-entry-renderer { border-radius: var(--button-corner-radius); width: 54px; padding: 12px 0 10px }}
 
   /** Beta Features */
   if betaFeatures {
@@ -75,14 +73,13 @@
     .ytGridShelfViewModelHost, ytd-rich-shelf-renderer[standard-shelf-margins][is-shorts],
     ytd-exploratory-results-renderer.ytd-item-section-renderer, ytd-horizontal-card-list-renderer.ytd-item-section-renderer:not(:first-child),
     ytd-rich-shelf-renderer[is-shorts][is-truncated] #dismissible.ytd-rich-shelf-renderer, ytd-rich-shelf-renderer[standard-shelf-margins] #dismissible.ytd-rich-shelf-renderer,
-    ytd-reel-shelf-renderer.ytd-item-section-renderer { display: none !important; margin: 0; padding: 0 }
-  }
+    ytd-reel-shelf-renderer.ytd-item-section-renderer { display: none !important; margin: 0; padding: 0 } }
 
   /** Panels & UI Tweaks */
   @media (max-width: 656px) {
-    ytd-masthead:not([ai-companion-enabled]) #voice-search-button.ytd-masthead { margin-right: 10px; background-color: transparent }
-  }
-  ytd-comment-view-model { margin-top: 10px }
+    ytd-masthead:not([ai-companion-enabled]) #voice-search-button.ytd-masthead { margin-right: 10px; background-color: transparent } }
+  ytd-comment-view-model { margin-top: 4px }
+  #contents.ytd-rich-grid-renderer { padding-top: 2.3px }
   tp-yt-paper-item.ytd-guide-entry-renderer { padding: 0 10px }
   #newness-dot.ytd-guide-entry-renderer { background-color: var(--highlight-link-normal) }
   #sections.ytd-guide-renderer > .ytd-guide-renderer:first-child { padding: 4px }
@@ -92,8 +89,7 @@
   ytd-comment-replies-renderer, ytd-comment-view-model, ytd-multi-page-menu-renderer, .yt-image-banner-view-model-wiz--inset,
   ytd-rich-metadata-renderer[rounded] { border-radius: var(--panels-corner) !important }
   ytd-watch-metadata[actions-on-separate-line] #actions.ytd-watch-metadata ytd-menu-renderer.ytd-watch-metadata { -moz-box-pack: end; justify-content: end }
-  .ytVideoMetadataCarouselViewModelHost, #placeholder-area.ytd-comment-simplebox-renderer,
-  .focused-line.tp-yt-paper-input-container { border-radius: var(--panels-corner) }
+  .ytVideoMetadataCarouselViewModelHost, #placeholder-area.ytd-comment-simplebox-renderer, .focused-line.tp-yt-paper-input-container { border-radius: var(--panels-corner) }
   .yt-core-attributed-string__link--call-to-action-color { color: var(--highlight-link-normal) }
   .ytd-text-inline-expander .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color,             
   #info .yt-simple-endpoint.yt-formatted-string { color: var(--highlight-link-normal) !important }
@@ -139,10 +135,9 @@
   .ytp-scrubber-button, .ytProgressBarPlayheadProgressBarPlayheadDot, .ytp-swatch-background-color { background-color: var(--progressbar-color-right) }
 
   /** Buttons */
-  .arrow.yt-horizontal-list-renderer, .yt-spec-button-shape-next--size-m, 
-  #voice-search-button.ytd-masthead, .ytChipShapeChip, .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
-    border: 0; color: var(--yt-spec-text-primary); background-color: var(--yt-emoji-picker-variant-selector-bg-color);
-    border-radius: var(--button-corner-radius) }
+  .arrow.yt-horizontal-list-renderer, .yt-spec-button-shape-next--size-m,#voice-search-button.ytd-masthead, .ytChipShapeChip, 
+  .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal { border: 0; color: var(--yt-spec-text-primary);
+    background-color: var(--yt-emoji-picker-variant-selector-bg-color); border-radius: var(--button-corner-radius) }
   yt-interaction.circular .fill.yt-interaction { border-radius: var(--button-corner-radius) }
   .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text { color: var(--yt-spec-icon-disabled) }
   .yt-spec-touch-feedback-shape--touch-response .yt-spec-touch-feedback-shape__fill { 
@@ -156,7 +151,8 @@
   #subscribe button[aria-label^="Unsubscribe"], #subscribe button.yt-spec-button-shape-next--tonal {
     border-radius: var(--button-corner-radius); color: var(--yt-spec-text-primary) !important;
     background-color: var(--yt-spec-badge-chip-background) !important }
-  #endpoint.yt-simple-endpoint.ytd-guide-entry-renderer, ytd-guide-entry-renderer,
+  #guide-button.ytd-masthead:hover,  yt-interaction.circular .stroke.yt-interaction,
+  #endpoint.yt-simple-endpoint.ytd-guide-entry-renderer, ytd-guide-entry-renderer, #buttons.ytd-masthead > .ytd-masthead:not(:last-child),
   .smartimation--enable-masking .smartimation__border { border-radius: var(--button-corner-radius) !important } 
   #voice-search-button.ytd-masthead { backdrop-filter: blur(4px) !important; background-color: rgba(255,255,255,0.1) !important }
   .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--text { background-color: transparent  } 
@@ -167,7 +163,8 @@
     
   /** Searchbox */
   .ytSearchboxComponentInputBoxDark { backdrop-filter: blur(4px); background: rgba(26, 25, 25, .49) !important}
-  .ytSearchboxComponentSearchButtonDark, .ytSearchboxComponentInputBoxDark { border-radius: var(--search-box-radius) }
+  .ytSearchboxComponentInputBoxDark { border-top-left-radius: var(--search-box-radius); border-bottom-left-radius: var(--search-box-radius) }
+  .ytSearchboxComponentSearchButtonDark { border-top-right-radius: var(--search-box-radius); border-bottom-right-radius: var(--search-box-radius) }
   .ytSearchboxComponentInputBoxDark.ytSearchboxComponentInputBoxHasFocus { border-color: var(--search-box-color) }
   .ytSuggestionComponentRemoveLinkDark { color: var(--search-box-color) }
 }
