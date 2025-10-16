@@ -1,5 +1,15 @@
-# __OldTube-Tweaks__
-Interface tweaks for an nostalgic experience in youtube... [![Install Directly With Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-238b8b.svg)](https://raw.githubusercontent.com/aKqir24/OldTube-Tweaks/master/OldTube_Tweaks.user.css)
+<div align="center">
+  <h1> OldTube-Tweaks </h1>
+  <img src="https://img.shields.io/badge/Version%20-1.4.0-639b1b.svg?style=for-the-badge" alt="Install Directly With Stylus">
+  <img src="https://img.shields.io/badge/License%20-MIT-436b9b.svg?style=for-the-badge" alt="Install Directly With Stylus">
+  <a href="https://raw.githubusercontent.com/aKqir24/OldTube-Tweaks/master/OldTube_Tweaks.user.css">
+    <img src="https://img.shields.io/badge/Install%20directly%20with-Stylus-238b8b.svg?style=for-the-badge" alt="Install Directly With Stylus">
+  </a>
+  </img>
+  <br>
+  
+  <p> Interface tweaks for an nostalgic experience in youtube...</p>
+</div>
 
 ### Features
   - Compact Side Menu Buttons
