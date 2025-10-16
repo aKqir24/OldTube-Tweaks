@@ -36,8 +36,7 @@
     --search-box-radius: searchBoxRadius; --progressbar-color-right: #ff2791;
     --progressbar-color-left: #f03; --yt-endpoint-hover-color: #2091f0
     --highlight-link-normal: #2091f0; --highlight-link-visited: #2091f088
-    --button-des-text: #2091f0;
-  }
+    --button-des-text: #2091f0 }
 
   /** Accent Color Application */
   if accentChoice == Full {
@@ -98,8 +97,7 @@
   .ytd-text-inline-expander .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color:visited,         
   #info .yt-simple-endpoint.yt-formatted-string:visited { color: var(--highlight-link-visited) !important}
   #video-title.ytd-playlist-video-renderer { color: white }
-  .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text, .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline {
-    color: var(--button-des-text); background-color: transparent }
+  .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text, .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline { color: var(--button-des-text); background-color: transparent }
   .yt-spec-touch-feedback-shape__fill, .yt-spec-touch-feedback-shape__stroke { color: var(--button-des-text) }
       
   /** Suggestions Grid */
@@ -127,8 +125,8 @@
 
   /** Progressbar */
   #progress.ytd-thumbnail-overlay-resume-playback-renderer, .ytp-play-progress,
-  .ytProgressBarLinePlayerProgressBarLoaded, .ytProgressBarLineProgressBarHovered, .ytProgressBarLineProgressBarPlayed, 
   .ytProgressBarLineProgressBarPlayedRefresh, .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment,
+  .ytProgressBarLinePlayerProgressBarLoaded, .ytProgressBarLineProgressBarHovered, .ytProgressBarLineProgressBarPlayed,
   ytd-thumbnail-overlay-resume-playback-renderer[enable-refresh-signature-moments-web] #progress.ytd-thumbnail-overlay-resume-playback-renderer {
     background: linear-gradient(to right, var(--progressbar-color-left) 80%, var(--progressbar-color-right) 100%) }
   .ytp-cairo-refresh .ytp-swatch-background-color { background-color: var(--progressbar-color-left) !important; }
