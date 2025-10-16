@@ -87,7 +87,7 @@
   .page-header-view-model-wiz--display-as-sidebar .page-header-view-model-wiz__page-header-background,
   ytd-playlist-video-renderer, #description.ytd-watch-metadata, .immersive-header-container.ytd-playlist-header-renderer,
   ytd-comment-replies-renderer, ytd-comment-view-model, ytd-multi-page-menu-renderer, .yt-image-banner-view-model-wiz--inset,
-  ytd-rich-metadata-renderer[rounded] { border-radius: var(--panels-corner) !important }
+  ytd-rich-metadata-renderer[rounded], ytd-popup-container { border-radius: var(--panels-corner) !important }
   ytd-watch-metadata[actions-on-separate-line] #actions.ytd-watch-metadata ytd-menu-renderer.ytd-watch-metadata { -moz-box-pack: end; justify-content: end }
   .ytVideoMetadataCarouselViewModelHost, #placeholder-area.ytd-comment-simplebox-renderer, .focused-line.tp-yt-paper-input-container { border-radius: var(--panels-corner) }
   .yt-core-attributed-string__link--call-to-action-color { color: var(--highlight-link-normal) }
@@ -141,8 +141,9 @@
   yt-interaction.circular .fill.yt-interaction { border-radius: var(--button-corner-radius) }
   .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text { color: var(--yt-spec-icon-disabled) }
   .yt-spec-touch-feedback-shape--touch-response .yt-spec-touch-feedback-shape__fill { 
-      background-color: var(--yt-spec-inverted-background) !important;
-      color: var(--yt-spec-text-primary) }
+   background-color: var(--yt-spec-inverted-background) !important;
+   color: var(--yt-spec-text-primary) }
+   button.ytd-topbar-menu-button-renderer:hover { border-color: red !important}
   .yt-spec-button-shape-next { background-color: transparent }
   .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--filled, #subscribe, 
   #subscribe-button yt-button-shape button, #subscribe-button yt-button-shape a[aria-label="Subscribe"] {
@@ -151,9 +152,9 @@
   #subscribe button[aria-label^="Unsubscribe"], #subscribe button.yt-spec-button-shape-next--tonal {
     border-radius: var(--button-corner-radius); color: var(--yt-spec-text-primary) !important;
     background-color: var(--yt-spec-badge-chip-background) !important }
-  #guide-button.ytd-masthead:hover,  yt-interaction.circular .stroke.yt-interaction,
+  #guide-button.ytd-masthead:hover,  yt-interaction.circular .stroke.yt-interaction, .yt-img-shadow, #avatar.ytd-active-account-header-renderer,
   #endpoint.yt-simple-endpoint.ytd-guide-entry-renderer, ytd-guide-entry-renderer, #buttons.ytd-masthead > .ytd-masthead:not(:last-child),
-  .smartimation--enable-masking .smartimation__border { border-radius: var(--button-corner-radius) !important } 
+  .smartimation--enable-masking .smartimation__border, yt-img-shadow.ytd-topbar-menu-button-renderer { border-radius: var(--button-corner-radius) !important } 
   #voice-search-button.ytd-masthead { backdrop-filter: blur(4px) !important; background-color: rgba(255,255,255,0.1) !important }
   .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--text { background-color: transparent  } 
   .ytChipShapeChip:hover { opacity: 0.8 }
