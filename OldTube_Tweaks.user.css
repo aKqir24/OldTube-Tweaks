@@ -20,9 +20,7 @@
 @var checkbox betaFeatures  'Beta Features' 0
 @var color ytbgColor 'Bg Color (beta)' #000
 
-@var select accentChoice "Theme Color Level" [ "None:None",
-                                          "Mini:Minimal",
-                                          "Full:Full*" ]
+@var select accentChoice "Theme Color Level" [ "None:None", "Mini:Minimal", "Full:Full*" ]
 @var color accentColor1 'Primary Color' #CC0000
 @var color accentColor2 'Secondary Color' #f03
 ==/UserStyle== */
