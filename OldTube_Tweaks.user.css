@@ -49,7 +49,7 @@
 
   /** Controls Style */
   if controlStyle == Old { 
-    .ytp-chrome-bottom, .ytp-gradient-top, .ytp-gradient-bottom { padding-left: 12px; padding-right: 12px; left: 0px !important; background: linear-gradient(to top, #161514cc, #3f3f3f00) }
+    .ytp-chrome-bottom, .ytp-gradient-top, .ytp-gradient-bottom { padding-left: 12px !important; padding-right: 12px !important; left: 0px !important; background: linear-gradient(to top, #161514cc, #3f3f3f00) }
     .ytp-delhi-modern .ytp-chapter-container, .ytp-delhi-modern .ytp-chapter-title.ytp-button, .ytp-delhi-modern .ytp-chrome-controls .ytp-right-controls,
     .ytp-delhi-modern .ytp-time-wrapper:not(.ytp-miniplayer-ui *), .ytp-delhi-modern.ytp-delhi-horizontal-volume-controls .ytp-volume-area,
     .ytp-delhi-modern.ytp-delhi-modern-compact-controls .ytp-chrome-controls .ytp-play-button { background: transparent !important }
@@ -109,7 +109,8 @@
   #video-title.ytd-playlist-video-renderer { color: white }
   .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text, .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline { color: var(--button-des-text); background-color: transparent }
   .yt-spec-touch-feedback-shape__fill, .yt-spec-touch-feedback-shape__stroke { color: var(--button-des-text) }
-      
+  .yt-badge-shape--default { padding: 2px 5px }
+  
   /** Suggestions Grid */
   ytd-rich-item-renderer[rendered-from-rich-grid] { border-radius: var(--feed-thumbnail-preview); margin: 8px 1.6px 1.2% 12px }
   .yt-simple-endpoint style-scope yt-formatted-string, { color: var(--yt-spec-text-primary) !important }
@@ -123,7 +124,7 @@
   .ytCollectionsStackCollectionStack2,.yt-spec-touch-feedback-shape--thumbnail-size-large .yt-spec-touch-feedback-shape__hover-effect, .ytThumbnailViewModelMedium,
   .yt-spec-touch-feedback-shape--thumbnail-size-large .yt-spec-touch-feedback-shape__stroke, .ytImageBannerViewModelInset, .ytThumbnailViewModelLarge,
   .ytp-videowall-still-round-medium .ytp-videowall-still-image, .yt-spec-touch-feedback-shape--thumbnail-size-large .yt-spec-touch-feedback-shape__fill,
-  .ytd-thumbnail, .shortsLockupViewModelHostThumbnailParentContainerRounded, ytd-thumbnail[size="large"] a.ytd-thumbnail,
+  .ytd-thumbnail, .shortsLockupViewModelHostThumbnailParentContainerRounded, ytd-thumbnail[size="large"] a.ytd-thumbnail, .ytp-modern-videowall-still-image,
   ytd-thumbnail[size="large"]::before, ytd-thumbnail.ytd-rich-grid-media, ytd-playlist-thumbnail.ytd-rich-grid-media,
   ytd-watch-flexy[rounded-player] #ytd-player.ytd-watch-flexy, .collections-stack-wiz__collection-stack1--medium,
   .collections-stack-wiz__collection-stack1--large, .collections-stack-wiz__collection-stack2 { border-radius: var(--feed-thumbnail-preview) !important }
