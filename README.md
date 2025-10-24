@@ -1,7 +1,7 @@
 <div align="center">
   <h1> OldTube-Tweaks </h1>
   <img src="https://img.shields.io/badge/Changes%20-Youtube-992c2b.svg?style=for-the-badge" alt="Change">
-  <img src="https://img.shields.io/badge/Latest%20-1.4.1-639b1b.svg?style=for-the-badge" alt="Version">
+  <img src="https://img.shields.io/badge/Latest%20-1.5.0-639b1b.svg?style=for-the-badge" alt="Version">
   <img src="https://img.shields.io/badge/License%20-MIT-436b9b.svg?style=for-the-badge" alt="MIT">
   <a href="https://raw.githubusercontent.com/aKqir24/OldTube-Tweaks/master/OldTube_Tweaks.user.css">
     <img src="https://img.shields.io/badge/Install%20directly%20with-Stylus-238b8b.svg?style=for-the-badge" alt="Install Directly With Stylus">

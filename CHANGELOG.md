@@ -1,4 +1,36 @@
 ### CHANGE LOG
+- #### V 1.5.0
+    - **FIXED**
+       - Some Link colors not following accent color
+       - Class changes in some not following the settings
+       - Some buttons not following the border-radius settings 
+    - **ADDED**
+       - New player controls style setting
+<br>
+
+- #### V 1.4.1
+    **CHANGES**
+       - Post cards follow panel border-radius setting
+       - Channel links follow accent color
+       - Padding in the tweaks in the channel page
+    **ADDED**
+       - Beta features for channel page
+
+- #### V 1.4.0
+    **CHANGES**
+        - More hover tags following the border-radius setting
+        - Reduced numbers of lines in the code
+        - Dialog boxes follow the border-radius setting
+    **FIXED**
+        - Menu padding is too much
+        - Time suggest link accent link color
+        - Margin between the suggestion cards
+        - Search following only the right border-radius settings
+        - Subscribe smart animation border-radius does not follow the setting
+    **ADDED**
+        - Channel new upload indicator as secondary color
+<br>
+
 - #### V 1.3.8
     - **CHANGES**
        - Hover is following the border-radius setting

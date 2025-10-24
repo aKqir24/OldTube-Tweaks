@@ -5,7 +5,7 @@
 @namespace      https://userstyles.world/user/aKqir24
 @homepageURL    https://github.com/aKqir24/OldTube-Tweaks
 @supportURL     https://github.com/aKqir24/OldTube-Tweaks/issues
-@version        1.4.0
+@version        1.5.0
 @license        MIT
 @preprocessor   stylus
 
@@ -14,26 +14,26 @@
 @var number buttonRadius "Buttons Radius" [0, 0, 24, 2, "px"]
 @var number searchBoxRadius "Searchbox Radius" [0, 0, 24, 2, "px"]
 
-@var checkbox controlShadow 'Controls Shadow' 1
 @var checkbox removeShorts  'Remove Shorts' 1
 @var checkbox compactMenu   'Compact Menu' 1
 @var checkbox betaFeatures  'Beta Features' 0
 @var color ytbgColor 'Bg Color (beta)' #000
 
+@var select controlStyle 'Player Controls Style' [ 'Old:Old*', 'Border: Border', 'Modern:Modern' ]
 @var select accentChoice "Theme Color Level" [ "None:None", "Mini:Minimal", "Full:Full*" ]
 @var color accentColor1 'Primary Color' #CC0000
 @var color accentColor2 'Secondary Color' #f03
 ==/UserStyle== */
 
-@-moz-document domain("youtube.com") {
+@-moz-document domain("youtube.com"), domain("studio.youtube.com") {
   :root {
     --smart-sub-animation: linear-gradient(to right, #f03 80%, #ff2791 100%);
     --button-corner-radius: buttonRadius; --search-box-color: var(--yt-spec-call-to-action);
     --corner-radius-video-player: feedVideoRadius; --panels-corner: panelsRadius;
     --feed-thumbnail-preview: feedVideoRadius; --video-card-preview: videoCardThumbnail;
     --search-box-radius: searchBoxRadius; --progressbar-color-right: #ff2791;
-    --progressbar-color-left: #f03; --yt-endpoint-hover-color: #2091f0
-    --highlight-link-normal: #2091f0; --highlight-link-visited: #2091f088
+    --progressbar-color-left: #f03; --yt-endpoint-hover-color: #2091f0;
+    --highlight-link-normal: #2091f0; --highlight-link-visited: #2091f088;
     --button-des-text: #2091f0 }
 
   /** Accent Color Application */
@@ -47,8 +47,18 @@
   } else if accentChoice == Mini { :root { --search-box-color: accentColor1; --subscribe-button-color: accentColor1 }
   } else if accentChoice == None { html[dark], [dark] { --yt-spec-red-indicator: linear-gradient(to right, #f03 80%, #ff2791 100%) }}
 
-  /** Controls Shadow */
-  if controlShadow == 0 { .ytp-gradient-top, .ytp-gradient-bottom { display: none }}
+  /** Controls Style */
+  if controlStyle == Old { 
+    .ytp-chrome-bottom, .ytp-gradient-top, .ytp-gradient-bottom { padding-left: 12px; padding-right: 12px; left: 0px !important; background: linear-gradient(to top, #161514cc, #3f3f3f00) }
+    .ytp-delhi-modern .ytp-chapter-container, .ytp-delhi-modern .ytp-chapter-title.ytp-button, .ytp-delhi-modern .ytp-chrome-controls .ytp-right-controls,
+    .ytp-delhi-modern .ytp-time-wrapper:not(.ytp-miniplayer-ui *), .ytp-delhi-modern.ytp-delhi-horizontal-volume-controls .ytp-volume-area,
+    .ytp-delhi-modern.ytp-delhi-modern-compact-controls .ytp-chrome-controls .ytp-play-button { background: transparent !important }
+    .ytp-chrome-controls .ytp-button:not([aria-disabled="true"]):not([disabled]):hover { border-radius: var(--button-corner-radius) !important }
+  } else if controlStyle == Border {
+    .ytp-delhi-modern .ytp-chapter-container, .ytp-delhi-modern .ytp-chapter-title.ytp-button, .ytp-delhi-modern .ytp-chrome-controls .ytp-right-controls,
+    .ytp-delhi-modern .ytp-time-wrapper:not(.ytp-miniplayer-ui *), .ytp-delhi-modern.ytp-delhi-horizontal-volume-controls .ytp-volume-area,
+    .ytp-delhi-modern.ytp-delhi-modern-compact-controls .ytp-chrome-controls .ytp-play-button { border-radius: var(--button-corner-radius) !important }
+  }
 
   /** Compact Menu */
   if compactMenu {
@@ -57,6 +67,9 @@
 
   /** Beta Features */
   if betaFeatures {
+     tabbed-page-header.grid-2-columns[has-inset-banner] #page-header-banner.ytd-tabbed-page-header { padding-right: calc(40% - 214px); padding-left: calc(40% - 214px) }
+     ytd-tabbed-page-header.grid-4-columns #page-header.ytd-tabbed-page-header  { padding-right: calc(45% - 428px); padding-left: calc(45% - 428px) }
+     ytd-tabbed-page-header.grid-4-columns[has-inset-banner] #page-header-banner.ytd-tabbed-page-header { padding-right: calc(35% - 428px); padding-left: calc(35% - 428px) }
     .player-container.ytd-reel-video-renderer, .metadata-container.ytd-reel-player-overlay-renderer { border-radius: var(--feed-thumbnail-preview) }
     .ytPlayerProgressBarDragContainer, ytProgressBarLineProgressBarLine { margin-left: -8px; width: 81.6%; position: sticky }
     .ytProgressBarLineProgressBarBackground, .ytProgressBarLineProgressBarPlayed, .ytProgressBarLineProgressBarLine,
@@ -82,12 +95,12 @@
   ytd-feed-nudge-renderer[rounded-container] #dismissible.ytd-feed-nudge-renderer,
   .page-header-view-model-wiz--display-as-sidebar .page-header-view-model-wiz__page-header-background,
   ytd-playlist-video-renderer, #description.ytd-watch-metadata, .immersive-header-container.ytd-playlist-header-renderer,
-  ytd-comment-replies-renderer, ytd-comment-view-model, ytd-multi-page-menu-renderer, .yt-image-banner-view-model-wiz--inset,
-  ytd-rich-metadata-renderer[rounded], ytd-popup-container { border-radius: var(--panels-corner) !important }
+  ytd-comment-replies-renderer, ytd-comment-view-model, ytd-multi-page-menu-renderer, .yt-image-banner-view-model-wiz--inset, .ytd-inline-survey-renderer, 
+  ytd-rich-metadata-renderer[rounded], ytd-popup-container, ytd-post-renderer[rounded-container] { border-radius: var(--panels-corner) !important }
   ytd-watch-metadata[actions-on-separate-line] #actions.ytd-watch-metadata ytd-menu-renderer.ytd-watch-metadata { -moz-box-pack: end; justify-content: end }
-  .ytVideoMetadataCarouselViewModelHost, #placeholder-area.ytd-comment-simplebox-renderer, .focused-line.tp-yt-paper-input-container { border-radius: var(--panels-corner) }
-  .yt-core-attributed-string__link--call-to-action-color { color: var(--highlight-link-normal) }
-  .ytd-text-inline-expander .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color,             
+ .ytVideoMetadataCarouselViewModelHost, #placeholder-area.ytd-comment-simplebox-renderer, .focused-line.tp-yt-paper-input-container { border-radius: var(--panels-corner) }
+  .yt-core-attributed-string__link--call-to-action-color, .ytAttributionViewModelAttributionText .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link { color: var(--highlight-link-normal) }
+  .ytd-text-inline-expander .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color, #manage-account .yt-simple-endpoint,            
   #info .yt-simple-endpoint.yt-formatted-string { color: var(--highlight-link-normal) !important }
   .ytd-text-inline-expander .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color:hover, 
   #info .yt-simple-endpoint.yt-formatted-string:hover { color: var(--highlight-link-hover) !important}
