@@ -22,8 +22,8 @@
   - Theme Colors ( Depending On The Theme Level)
   - Change Primary & Secondary Color ( Gradient )
   - Border Radius Adjustment For Every Corner
-  - Shorts Section Toggle
-  - Video Control Shadows
+  - Show Shorts Section Toggle
+  - Video Control Style
   - Old Padding & Margins
 
 ### Screenshots
