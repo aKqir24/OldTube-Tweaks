@@ -1,5 +1,5 @@
 ### CHANGE LOG
-- ### V 1.5.2
+- #### V 1.5.2
    - **FIXED**
         - Some thumbnails does not follow border-radius settings
         - Some text hovers does not change to accent color
