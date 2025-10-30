@@ -5,7 +5,7 @@
 @namespace      https://userstyles.world/user/aKqir24
 @homepageURL    https://github.com/aKqir24/OldTube-Tweaks
 @supportURL     https://github.com/aKqir24/OldTube-Tweaks/issues
-@version        1.5.1
+@version        1.5.2
 @license        MIT
 @preprocessor   stylus
 
@@ -42,7 +42,12 @@
       --subscribe-button-color: accentColor1; --progressbar-color-left: accentColor1;
       --progressbar-color-right: accentColor2; --highlight-link-normal: accentColor2;
       --highlight-link-hover: accentColor1; --highlight-link-visited: accentColor1;
-      --button-des-text: accentColor1; --search-box-color: accentColor2 }
+      --button-des-text: accentColor1; --search-box-color: accentColor2; 
+      --yt-spec-suggested-action: accentColor1 !important; 
+      --yt-spec-call-to-action: accentColor2 !important }
+    ytd-macro-markers-list-item-renderer:hover #time.ytd-macro-markers-list-item-renderer { background-color: accentColor2 !important; color: accentColor1 !important }
+    #time.ytd-macro-markers-list-item-renderer::before { background-color: accentColor1 !important; color: accentColor2 !important}
+    ytd-horizontal-card-list-renderer[modern-chapters][card-list-style="HORIZONTAL_CARD_LIST_STYLE_TYPE_ENGAGEMENT_PANEL_SECTION"] #items.ytd-horizontal-card-list-renderer::before { background-color: linear-gradient(to right, accentColor1 80%, accentColor2 100%); }
     html[dark], [dark] { --yt-spec-red-indicator: accentColor1 }
   } else if accentChoice == Mini { :root { --search-box-color: accentColor1; --subscribe-button-color: accentColor1 }
   } else if accentChoice == None { html[dark], [dark] { --yt-spec-red-indicator: linear-gradient(to right, #f03 80%, #ff2791 100%) }}
@@ -105,7 +110,7 @@
   .yt-core-attributed-string__link--call-to-action-color, .ytAttributionViewModelAttributionText .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link { color: var(--highlight-link-normal) }
   .ytd-text-inline-expander .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color, #manage-account .yt-simple-endpoint,            
   #info .yt-simple-endpoint.yt-formatted-string { color: var(--highlight-link-normal) !important }
-  .ytd-text-inline-expander .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color:hover, 
+  .ytd-text-inline-expander .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color:hover,
   #info .yt-simple-endpoint.yt-formatted-string:hover { color: var(--highlight-link-hover) !important}
   .ytd-text-inline-expander .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color:visited,         
   #info .yt-simple-endpoint.yt-formatted-string:visited { color: var(--highlight-link-visited) !important}
@@ -113,6 +118,7 @@
   .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text, .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline { color: var(--button-des-text); background-color: transparent }
   .yt-spec-touch-feedback-shape__fill, .yt-spec-touch-feedback-shape__stroke { color: var(--button-des-text) }
   .yt-badge-shape--default { padding: 2px 5px }
+  
   
   /** Suggestions Grid */
   ytd-rich-item-renderer[rendered-from-rich-grid] { border-radius: var(--feed-thumbnail-preview); margin: 8px 1.6px 1.2% 12px }
@@ -123,6 +129,7 @@
   .yt-lockup-metadata-view-model { margin: -2.8px 2px -8px !important }
 
   /** Thumbnails & Player */
+  #thumbnail.ytd-macro-markers-list-item-renderer,
   ytd-expandable-metadata-renderer:hover, ytd-expandable-metadata-renderer:not([is-expanded]), .ytCollectionsStackCollectionStack1, .ytImageBannerViewModelSmallInset,
   .ytCollectionsStackCollectionStack2,.yt-spec-touch-feedback-shape--thumbnail-size-large .yt-spec-touch-feedback-shape__hover-effect, .ytThumbnailViewModelMedium,
   .yt-spec-touch-feedback-shape--thumbnail-size-large .yt-spec-touch-feedback-shape__stroke, .ytImageBannerViewModelInset, .ytThumbnailViewModelLarge,
