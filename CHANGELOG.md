@@ -1,4 +1,12 @@
 ### CHANGE LOG
+- #### V 1.5.3
+    - **FIXED**
+       - Blank offline downloads page
+       - Like & Dislike Button only follows border-radius in a specified direction
+    - **CHANGED**
+       - Mini player follows border-radius settings
+<br>
+
 - ### V 1.5.2
     **FIXED**
         - Some thumbnails does not follow border-radius settings

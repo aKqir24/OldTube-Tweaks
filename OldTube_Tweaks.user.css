@@ -1,11 +1,11 @@
-/* ==UserStyle==
+ /* ==UserStyle==
 @name           OldTube Tweaks
 @author         aKqir24 <Akqir> (https://github.com/aKqir24)
 @description    Interface tweaks for a nostalgic YouTube experience
 @namespace      https://userstyles.world/user/aKqir24
 @homepageURL    https://github.com/aKqir24/OldTube-Tweaks
 @supportURL     https://github.com/aKqir24/OldTube-Tweaks/issues
-@version        1.5.2
+@version        1.5.3
 @license        MIT
 @preprocessor   stylus
 
@@ -69,8 +69,7 @@
   }
 
   /** Compact Menu */
-  if compactMenu {
-    .title.ytd-mini-guide-entry-renderer { display: none }
+  if compactMenu { .title.ytd-mini-guide-entry-renderer { display: none }
     ytd-mini-guide-entry-renderer, a.ytd-mini-guide-entry-renderer { border-radius: var(--button-corner-radius); width: 54px; padding: 12px 0 10px }}
 
   /** Beta Features */
@@ -87,7 +86,7 @@
 
   /** Remove Shorts */
   if removeShorts {
-    .ytGridShelfViewModelHost, ytd-rich-shelf-renderer[standard-shelf-margins][is-shorts], ytd-rich-section-renderer,
+    .ytGridShelfViewModelHost, ytd-rich-shelf-renderer[standard-shelf-margins][is-shorts],
     ytd-exploratory-results-renderer.ytd-item-section-renderer, ytd-horizontal-card-list-renderer.ytd-item-section-renderer:not(:first-child),
     ytd-rich-shelf-renderer[is-shorts][is-truncated] #dismissible.ytd-rich-shelf-renderer, ytd-rich-shelf-renderer[standard-shelf-margins] #dismissible.ytd-rich-shelf-renderer,
     ytd-reel-shelf-renderer.ytd-item-section-renderer { display: none !important; margin: 0; padding: 0 } }
@@ -100,8 +99,8 @@
   tp-yt-paper-item.ytd-guide-entry-renderer { padding: 0 10px }
   #newness-dot.ytd-guide-entry-renderer { background-color: var(--highlight-link-normal) }
   #sections.ytd-guide-renderer > .ytd-guide-renderer:first-child { padding: 4px }
-  ytd-feed-nudge-renderer[rounded-container] #dismissible.ytd-feed-nudge-renderer,
-  .page-header-view-model-wiz--display-as-sidebar .page-header-view-model-wiz__page-header-background,
+  ytd-feed-nudge-renderer[rounded-container] #dismissible.ytd-feed-nudge-renderer, ytd-playlist-panel-renderer:not([within-miniplayer]) #container.ytd-playlist-panel-renderer,
+  .page-header-view-model-wiz--display-as-sidebar .page-header-view-model-wiz__page-header-background, yt-notification-action-renderer.is-download tp-yt-paper-toast.yt-notification-action-renderer,
   ytd-playlist-video-renderer, #description.ytd-watch-metadata, .immersive-header-container.ytd-playlist-header-renderer,
   ytd-comment-replies-renderer, ytd-comment-view-model, ytd-multi-page-menu-renderer, .yt-image-banner-view-model-wiz--inset, .ytd-inline-survey-renderer, 
   ytd-rich-metadata-renderer[rounded], ytd-popup-container, ytd-post-renderer[rounded-container] { border-radius: var(--panels-corner) !important }
@@ -129,7 +128,7 @@
   .yt-lockup-metadata-view-model { margin: -2.8px 2px -8px !important }
 
   /** Thumbnails & Player */
-  #thumbnail.ytd-macro-markers-list-item-renderer,
+  #thumbnail.ytd-macro-markers-list-item-renderer, .ytdMiniplayerComponentContent,
   ytd-expandable-metadata-renderer:hover, ytd-expandable-metadata-renderer:not([is-expanded]), .ytCollectionsStackCollectionStack1, .ytImageBannerViewModelSmallInset,
   .ytCollectionsStackCollectionStack2,.yt-spec-touch-feedback-shape--thumbnail-size-large .yt-spec-touch-feedback-shape__hover-effect, .ytThumbnailViewModelMedium,
   .yt-spec-touch-feedback-shape--thumbnail-size-large .yt-spec-touch-feedback-shape__stroke, .ytImageBannerViewModelInset, .ytThumbnailViewModelLarge,
@@ -160,8 +159,7 @@
   yt-interaction.circular .fill.yt-interaction { border-radius: var(--button-corner-radius) }
   .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text { color: var(--yt-spec-icon-disabled) }
   .yt-spec-touch-feedback-shape--touch-response .yt-spec-touch-feedback-shape__fill { 
-   background-color: var(--yt-spec-inverted-background) !important; 
-   color: var(--yt-spec-text-primary) }
+   background-color: var(--yt-spec-inverted-background) !important; color: var(--yt-spec-text-primary) }
    button.ytd-topbar-menu-button-renderer:hover { border-color: red !important}
   .yt-spec-button-shape-next { background-color: transparent }
   .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--filled, #subscribe, 
@@ -180,6 +178,8 @@
   .ytChipShapeActive { color: var(--yt-spec-text-primary-inverse); background-color: var(--yt-spec-text-primary) }
   #subscribe.ytd-grid-channel-renderer, .yt-lockup-metadata-view-model__menu-button { padding: 1px; margin-top: 8px }
   ytd-comment-replies-renderer #creator-thumbnail.ytd-comment-replies-renderer { padding-right: 8px; padding-left: 2px }
+  dislike-button-view-model toggle-button-view-model button-view-model button { border-top-left-radius: 0px !important;  border-bottom-left-radius: 0px !important; }
+  like-button-view-model toggle-button-view-model button-view-model button { border-top-right-radius: 0px !important;  border-bottom-right-radius: 0px !important; }
     
   /** Searchbox */
   .ytSearchboxComponentInputBoxDark { backdrop-filter: blur(4px); background: rgba(26, 25, 25, .49) !important}
