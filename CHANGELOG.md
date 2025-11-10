@@ -1,4 +1,13 @@
 ### CHANGE LOG
+- #### V 1.5.4
+    - **ADDED**
+       - Avatar image border radius setting
+    - **FIXED**
+       - Incorrect margin in some buttons
+    - **CHANGED**
+       - Small refactoring done
+<br>
+
 - #### V 1.5.3
     - **FIXED**
        - Blank offline downloads page
