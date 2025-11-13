@@ -1,4 +1,10 @@
 ### CHANGE LOG
+- #### V 1.5.5
+    - **CHANGED**
+       - home-page-skeleton is following border-radius setting
+       - margin & padding matching in some tags
+<br>
+
 - #### V 1.5.4
     - **ADDED**
        - Avatar image border radius setting
