@@ -1,4 +1,12 @@
 ### CHANGE LOG
+- #### V 1.5.6
+    - **CHANGED**
+       - Margin in the player & buttons
+    - **FIXED**
+       - Hover not following border-radius setting in AI description
+       - Hover link color in channel player
+<br>
+
 - #### V 1.5.5
     - **CHANGED**
        - home-page-skeleton is following border-radius setting

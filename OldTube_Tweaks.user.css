@@ -5,7 +5,7 @@
 @namespace      https://userstyles.world/user/aKqir24
 @homepageURL    https://github.com/aKqir24/OldTube-Tweaks
 @supportURL     https://github.com/aKqir24/OldTube-Tweaks/issues
-@version        1.5.5
+@version        1.5.6
 @license        MIT
 @preprocessor   stylus
 
@@ -102,15 +102,17 @@
   ytd-feed-nudge-renderer[rounded-container] #dismissible.ytd-feed-nudge-renderer, ytd-playlist-panel-renderer:not([within-miniplayer]) #container.ytd-playlist-panel-renderer,
   .page-header-view-model-wiz--display-as-sidebar .page-header-view-model-wiz__page-header-background, ytd-expandable-metadata-renderer:not([is-expanded]), 
   yt-notification-action-renderer.is-download tp-yt-paper-toast.yt-notification-action-renderer,
-  ytd-playlist-video-renderer, #description.ytd-watch-metadata, .immersive-header-container.ytd-playlist-header-renderer, .text-shell,
+  ytd-playlist-video-renderer, #description.ytd-watch-metadata, .immersive-header-container.ytd-playlist-header-renderer, .text-shell, 
+  ytd-expandable-metadata-renderer[has-video-summary] #header.ytd-expandable-metadata-renderer:hover, 
+  ytd-expandable-metadata-renderer[has-video-summary] #header.ytd-expandable-metadata-renderer, div .ytd-watch-flexy:hover, #expandable-metadata.ytd-watch-flexy:hover,
   ytd-comment-replies-renderer, ytd-comment-view-model, ytd-multi-page-menu-renderer, .yt-image-banner-view-model-wiz--inset, .ytd-inline-survey-renderer, 
   ytd-rich-metadata-renderer[rounded], ytd-popup-container, ytd-post-renderer[rounded-container] { border-radius: var(--panels-corner) !important }
   ytd-watch-metadata[actions-on-separate-line] #actions.ytd-watch-metadata ytd-menu-renderer.ytd-watch-metadata { -moz-box-pack: end; justify-content: end }
  .ytVideoMetadataCarouselViewModelHost, #placeholder-area.ytd-comment-simplebox-renderer, .focused-line.tp-yt-paper-input-container { border-radius: var(--panels-corner) }
   .yt-core-attributed-string__link--call-to-action-color, .ytAttributionViewModelAttributionText .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link { color: var(--highlight-link-normal) }
   .ytd-text-inline-expander .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color, #manage-account .yt-simple-endpoint,            
-  #info .yt-simple-endpoint.yt-formatted-string { color: var(--highlight-link-normal) !important }
-  .ytd-text-inline-expander .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color:hover,
+  #info .yt-simple-endpoint.yt-formatted-string, span .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color { color: var(--highlight-link-normal) !important }
+  .ytd-text-inline-expander .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color:hover, yt-formatted-string[has-link-only_]:not([force-default-style]) a.yt-simple-endpoint.yt-formatted-string:hover
   #info .yt-simple-endpoint.yt-formatted-string:hover { color: var(--highlight-link-hover) !important}
   .ytd-text-inline-expander .yt-core-attributed-string--link-inherit-color .yt-core-attributed-string__link--call-to-action-color:visited,         
   #info .yt-simple-endpoint.yt-formatted-string:visited { color: var(--highlight-link-visited) !important}
@@ -143,7 +145,7 @@
   .yt-spec-touch-feedback-shape--thumbnail-size-large .yt-spec-touch-feedback-shape__hover-effect { margin: -6px -4px -8px -4px !important }
   .yt-lockup-metadata-view-model--compact .yt-lockup-metadata-view-model__title { margin-right: 10px }
   .yt-spec-avatar-shape--live-ring::after, .yt-spec-avatar-shape__image, .yt-img-shadow, yt-img-shadow, .iv-branding .branding-img-container img,
-  #avatar.ytd-active-account-header-renderer, #home-page-skeleton .channel-avatar { border-radius: var(--avatar-corner-radius) !important }
+  #avatar.ytd-active-account-header-renderer, #home-page-skeleton .channel-avatar, .watch-skeleton #secondary-info #top-row #video-owner #channel-icon { border-radius: var(--avatar-corner-radius) !important }
 
   /** Progressbar */
   #progress.ytd-thumbnail-overlay-resume-playback-renderer, .ytp-play-progress,
@@ -155,9 +157,10 @@
   .ytp-scrubber-button, .ytProgressBarPlayheadProgressBarPlayheadDot, .ytp-swatch-background-color { background-color: var(--progressbar-color-right) }
 
   /** Buttons */
-  .masthead-skeleton-icon, .arrow.yt-horizontal-list-renderer, .yt-spec-button-shape-next--size-m,#voice-search-button.ytd-masthead, .ytChipShapeChip, 
+  .arrow.yt-horizontal-list-renderer, .yt-spec-button-shape-next--size-m,#voice-search-button.ytd-masthead, .ytChipShapeChip, 
   .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal { border: 0; color: var(--yt-spec-text-primary);
     background-color: var(--yt-emoji-picker-variant-selector-bg-color); border-radius: var(--button-corner-radius) }
+  .watch-skeleton #primary-info .menu-button, .masthead-skeleton-icon, .watch-skeleton #secondary-info #top-row #subscribe-button
   yt-interaction.circular .fill.yt-interaction { border-radius: var(--button-corner-radius) }
   .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text { color: var(--yt-spec-icon-disabled) }
   .yt-spec-touch-feedback-shape--touch-response .yt-spec-touch-feedback-shape__fill { 
