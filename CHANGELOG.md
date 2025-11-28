@@ -5,13 +5,13 @@
     - **FIXED**
        - Hover not following border-radius setting in AI description
        - Hover link color in channel player
-<br>
+
 
 - #### V 1.5.5
     - **CHANGED**
        - home-page-skeleton is following border-radius setting
        - margin & padding matching in some tags
-<br>
+
 
 - #### V 1.5.4
     - **ADDED**
@@ -20,7 +20,7 @@
        - Incorrect margin in some buttons
     - **CHANGED**
        - Small refactoring done
-<br>
+
 
 - #### V 1.5.3
     - **FIXED**
@@ -28,7 +28,7 @@
        - Like & Dislike Button only follows border-radius in a specified direction
     - **CHANGED**
        - Mini player follows border-radius settings
-<br>
+
 
 - ### V 1.5.2
     **FIXED**
@@ -36,7 +36,7 @@
         - Some text hovers does not change to accent color
     **CHANGED**
         - Video Chapters Navigation adapts to accent colors
-<br>
+
 
 - #### V 1.5.0
     - **FIXED**
@@ -45,7 +45,7 @@
        - Some buttons not following the border-radius settings 
     - **ADDED**
        - New player controls style setting
-<br>
+
 
 - #### V 1.4.1
     **CHANGES**
@@ -68,7 +68,7 @@
         - Subscribe smart animation border-radius does not follow the setting
     **ADDED**
         - Channel new upload indicator as secondary color
-<br>
+
 
 - #### V 1.3.8
     - **CHANGES**
@@ -77,7 +77,7 @@
     - **FIXED**
        - Button padding overlays in some cases
        - Suggestions panels does not follow border-radius setting
-<br>
+
 
 - #### V 1.3.7
     - **CHANGES**
@@ -85,13 +85,13 @@
     - **FIXED**
        - Channel Banner not following the border-radius setting
        - Too much padding in channel subscribe button
-<br>
+
 
 - #### V 1.3.6
     - **CHANGES**
        - Optimization in some lines
        - Hover border-radius in compact menu 
-<br>
+
 
 - #### V 1.3.5
     - **CHANGES**
@@ -101,7 +101,7 @@
     - **FIXED**
        - Shorts section is still present after toggle
        - Links will secondary accent colors
-<br>
+
 
 - #### V 1.3.4
     - **CHANGES**
@@ -112,14 +112,13 @@
     - **FIXED**
        - Buttons in overlap & has wrong margin when zooming
 
-<br>
 
 - #### V 1.3.2
     - **FIXED**
        - Overlapping metadata labels & text
        - Margin of suggestion cards
        - Shorts border & margin overlap
-<br>
+
 
 - #### V 1.3.1
     - **FIXED**
@@ -129,7 +128,7 @@
     - **CHANGED**
        - Frame of suggestion cards adjusted for view
        - Margin & padding of the suggestion cards
-<br>
+
 
 - #### V 1.3.0 
     - **FIXED**
@@ -138,14 +137,14 @@
        - Playlist border modifier to panels
        - Wider History tab pages
        - Main UI Background Color ( beta ) 
-<br>
+
 
 - #### V 1.2.7 
     - **FIXED**
        - Text Link Colors not Changing in Theme Mode
        - Hovering in some buttons shows a transparent box
        - Highlighting wrong colors to some texts
-<br>
+
 
 - #### V 1.2.6
     - **FIXED**
@@ -155,7 +154,7 @@
        - History Is Modified ( But Only In Beta )
     - **CHANGED**
        - Subscribe Button is now Compacted
-<br>
+
 
 - #### V 1.2.5
     - **CHANGED**
@@ -170,7 +169,7 @@
        - Custom Gradient Effects On The Progress Bar
        - Added Search Video Hover Theme Color
        - Search Box Primary Theme Color 
-<br>
+
 
 - #### V 1.2.2
     - **CHANGED**
@@ -180,7 +179,7 @@
        - Added Accent Color In Captions Indicator
        - Added Playlist Progress Bar Accent Color 
        - Improved Accent Color Application
-<br>
+
 
 - #### V 1.2.0
     - **CHANGED**
@@ -192,7 +191,7 @@
         - Downloaded Video Mini Player Border
     - **FIXES**
         - Progress Bar Accent Color Remains Unchanged
-<br>
+
 
 - #### V 1.1.8
     - **FIXES**
@@ -201,7 +200,7 @@
       - Bugs in The New Color Accent Option
    - **ADDED**
      - More Border Radius Attachments ( Labels & Endscreens )
-<br> 
+
 
 - #### V 1.1.7
     - **FIXES**
@@ -211,7 +210,7 @@
       - Added Game Description Border Radius To Panels & Cards Setting
       - Added Beta Features ( Implies To Only To The Shorts Section )
       - Custom Accent Color Selection Between Progress Bar & Subscribe Button
-<br>
+
 
 - #### V 1.1.6
     - **FIXES**
@@ -220,7 +219,7 @@
     - **ADDED**
       - Added Description Corner Adjustment
       - Playlist Thumbnail Corner To Video & Thumb Corner Adjustment 
-<br>
+
 
 - #### V 1.1.4
     - **FIXES**
