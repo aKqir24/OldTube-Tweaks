@@ -1,4 +1,13 @@
 ### CHANGE LOG
+- #### V 1.5.7
+  - **CHANGED**
+    - Refactored the code easy reading
+    **FIXED**
+    - Border colors in channel avatar profile
+    - Chapter preview following avatar border radius
+    - Hover not following border-radius
+
+
 - #### V 1.5.6
   - **CHANGED**
     - Margin in the player & buttons

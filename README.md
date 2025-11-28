@@ -2,7 +2,7 @@
 
 ![Logo](https://github.com/user-attachments/assets/0899b0cf-368c-4b7b-91c1-0a8e58d530f1)
 ![Changes](https://img.shields.io/badge/Changes%20-Youtube-992c2b.svg?style=for-the-badge)
-![Latest](https://img.shields.io/badge/Latest%20-1.5.6-639b1b.svg?style=for-the-badge)
+![Latest](https://img.shields.io/badge/Latest%20-1.5.7-639b1b.svg?style=for-the-badge)
 ![MIT](https://img.shields.io/badge/License%20-MIT-436b9b.svg?style=for-the-badge)
 [![Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-238b8b.svg?style=for-the-badge)](https://raw.githubusercontent.com/aKqir24/OldTube-Tweaks/master/OldTube_Tweaks.user.css)
 
