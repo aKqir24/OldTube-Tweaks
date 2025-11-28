@@ -6,7 +6,8 @@
 ![MIT](https://img.shields.io/badge/License%20-MIT-436b9b.svg?style=for-the-badge)
 [![Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-238b8b.svg?style=for-the-badge)](https://raw.githubusercontent.com/aKqir24/OldTube-Tweaks/master/OldTube_Tweaks.user.css)
 
-Interface tweaks for an nostalgic experience in youtube...</dd>
+Interface tweaks for an nostalgic experience in youtube...
+
 Check out the ![CHANGELOG](https://github.com/aKqir24/OldTube-Tweaks/blob/main/CHANGELOG.md), to see what is changed each version.</dd>
 </div>
 
