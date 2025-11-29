@@ -8,7 +8,7 @@
 
 Interface tweaks for an nostalgic experience in youtube...
 
-Check out the ![CHANGELOG](https://github.com/aKqir24/OldTube-Tweaks/blob/main/CHANGELOG.md), to see what is changed each version.</dd>
+Check out the [CHANGELOG](https://github.com/aKqir24/OldTube-Tweaks/blob/main/CHANGELOG.md), to see what is changed each version.</dd>
 </div>
 
 ### Features
