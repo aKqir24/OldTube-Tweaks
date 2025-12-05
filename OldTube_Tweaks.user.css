@@ -9,33 +9,33 @@
 @license        MIT
 @preprocessor   stylus
 
-@var number panelsRadius "Panels Radius" [0, 0, 20, 2, "px"]
-@var number feedVideoRadius "Video Radius" [0, 0, 24, 2, "px"]
-@var number buttonRadius "Buttons Radius" [0, 0, 24, 2, "px"]
-@var number searchBoxRadius "Searchbox Radius" [0, 0, 24, 2, "px"]
-@var number avatarRadius "Avatar Radius" [30, 0, 100, 2, "%"]
+@var number panels-radius "Panels Radius" [0, 0, 20, 2, "px"]
+@var number feed-video-radius "Video Radius" [0, 0, 24, 2, "px"]
+@var number button-radius "Buttons Radius" [0, 0, 24, 2, "px"]
+@var number search-box-radius "Searchbox Radius" [0, 0, 24, 2, "px"]
+@var number avatar-radius "Avatar Radius" [30, 0, 100, 2, "%"]
 
-@var checkbox removeShorts  'Remove Shorts' 1
-@var checkbox compactMenu   'Compact Menu' 1
-@var checkbox betaFeatures  'Beta Features' 0
-@var color ytbgColor 'Bg Color (beta)' #000
+@var checkbox remove-shorts  'Remove Shorts' 1
+@var checkbox compact-menu   'Compact Menu' 1
+@var checkbox beta-features  'Beta Features' 0
+@var color ytbgcolor 'Bg Color (beta)' #000
 
-@var select controlStyle 'Player Controls Style' [ 'Old:Old*', 'Border: Border', 'Modern:Modern' ]
-@var select accentChoice "Theme Color Level" [ "None:None", "Mini:Minimal", "Full:Full*" ]
-@var color accentColor1 'Primary Color' #CC0000
-@var color accentColor2 'Secondary Color' #f03
+@var select control-style 'Player Controls Style' [ 'Old:Old*', 'Border: Border', 'Modern:Modern' ]
+@var select accent-choice "Theme Color Level" [ "None:None", "Mini:Minimal", "Full:Full*" ]
+@var color accent-color1 'Primary Color' #CC0000
+@var color accent-color2 'Secondary Color' #f03
 ==/UserStyle== */
 @-moz-document domain("youtube.com") {
     :root {
         --smart-sub-animation: linear-gradient(to right, #f03 80%, #ff2791 100%);
-        --button-corner-radius: buttonRadius;
+        --button-corner-radius: button-radius;
         --search-box-color: var(--yt-spec-call-to-action);
-        --corner-radius-video-player: feedVideoRadius;
-        --panels-corner: panelsRadius;
-        --feed-thumbnail-preview: feedVideoRadius;
+        --corner-radius-video-player: feed-video-radius;
+        --panels-corner: panels-radius;
+        --feed-thumbnail-preview: feed-video-radius;
         --video-card-preview: videoCardThumbnail;
-        --avatar-corner-radius: avatarRadius;
-        --search-box-radius: searchBoxRadius;
+        --avatar-corner-radius: avatar-radius;
+        --search-box-radius: search-box-radius;
         --progressbar-color-right: #ff2791;
         --progressbar-color-left: #f03;
         --yt-endpoint-hover-color: #2091f0;
@@ -46,43 +46,43 @@
     }
 
     /** Accent Color Application */
-    if accentChoice==Full {
+    if accent-choice==Full {
         :root {
-            --subscribe-button-color: accentColor1;
-            --progressbar-color-left: accentColor1;
-            --progressbar-color-right: accentColor2;
-            --highlight-link-normal: accentColor2;
-            --highlight-link-hover: accentColor1;
-            --highlight-link-visited: accentColor1;
-            --button-des-text: accentColor1;
-            --search-box-color: accentColor2;
-            --yt-spec-suggested-action: accentColor1 !important;
-            --yt-spec-call-to-action: accentColor2 !important
+            --subscribe-button-color: accent-color1;
+            --progressbar-color-left: accent-color1;
+            --progressbar-color-right: accent-color2;
+            --highlight-link-normal: accent-color2;
+            --highlight-link-hover: accent-color1;
+            --highlight-link-visited: accent-color1;
+            --button-des-text: accent-color1;
+            --search-box-color: accent-color2;
+            --yt-spec-suggested-action: accent-color1 !important;
+            --yt-spec-call-to-action: accent-color2 !important
         }
         ytd-macro-markers-list-item-renderer:hover #time.ytd-macro-markers-list-item-renderer {
-            background-color: accentColor2 !important;
-            color: accentColor1 !important
+            background-color: accent-color2 !important;
+            color: accent-color1 !important
         }
         #time.ytd-macro-markers-list-item-renderer::before {
-            background-color: accentColor1 !important;
-            color: accentColor2 !important
+            background-color: accent-color1 !important;
+            color: accent-color2 !important
         }
         ytd-horizontal-card-list-renderer[modern-chapters][card-list-style="HORIZONTAL_CARD_LIST_STYLE_TYPE_ENGAGEMENT_PANEL_SECTION"] #items.ytd-horizontal-card-list-renderer::before {
-            background-color: linear-gradient(to right, accentColor1 80%, accentColor2 100%);
+            background-color: linear-gradient(to right, accent-color1 80%, accent-color2 100%);
         }
         html[dark],
         [dark] {
-            --yt-spec-red-indicator: accentColor1;
-            --yt-spec-call-to-action: accentColor2
+            --yt-spec-red-indicator: accent-color1;
+            --yt-spec-call-to-action: accent-color2
         }
     }
-    else if accentChoice==Mini {
+    else if accent-choice==Mini {
         :root {
-            --search-box-color: accentColor1;
-            --subscribe-button-color: accentColor1
+            --search-box-color: accent-color1;
+            --subscribe-button-color: accent-color1
         }
     }
-    else if accentChoice==None {
+    else if accent-choice==None {
         html[dark],
         [dark] {
             --yt-spec-red-indicator: linear-gradient(to right, #f03 80%, #ff2791 100%)
@@ -90,7 +90,7 @@
     }
 
     /** Controls Style */
-    if controlStyle==Old {
+    if control-style==Old {
         .ytp-chrome-bottom,
         .ytp-gradient-top,
         .ytp-gradient-bottom {
@@ -113,7 +113,7 @@
             border-radius: var(--button-corner-radius) !important
         }
     }
-    else if controlStyle==Border {
+    else if control-style==Border {
         .ytp-delhi-modern .ytp-prev-button:not(.ytp-miniplayer-button-container > *),
         .ytp-delhi-modern .ytp-chrome-controls .ytp-next-button:not(.ytp-miniplayer-button-container > *),
         .ytp-delhi-modern .ytp-chapter-container,
@@ -127,7 +127,7 @@
     }
 
     /** Compact Menu */
-    if compactMenu {
+    if compact-menu {
         .title.ytd-mini-guide-entry-renderer {
             display: none
         }
@@ -140,18 +140,15 @@
     }
 
     /** Beta Features */
-    if betaFeatures {
-        tabbed-page-header.grid-2-columns[has-inset-banner] #page-header-banner.ytd-tabbed-page-header {
-            padding-right: calc(40% - 214px);
-            padding-left: calc(40% - 214px)
+    if beta-features {
+        #page-header {
+            padding-left: 0px !important
         }
-        ytd-tabbed-page-header.grid-4-columns #page-header.ytd-tabbed-page-header {
-            padding-right: calc(45% - 428px);
-            padding-left: calc(45% - 428px)
+        ytd-section-list-renderer {
+            margin-left:-13%
         }
-        ytd-tabbed-page-header.grid-4-columns[has-inset-banner] #page-header-banner.ytd-tabbed-page-header {
-            padding-right: calc(35% - 428px);
-            padding-left: calc(35% - 428px)
+        ytd-item-section-renderer {
+            width: 125%
         }
         .player-container.ytd-reel-video-renderer,
         .metadata-container.ytd-reel-player-overlay-renderer {
@@ -172,13 +169,16 @@
         .ytProgressBarLineHost {
             width: 123.53%;
         }
+        ytd-two-column-browse-results-renderer[page-subtype="history"] ytd-browse-feed-actions-renderer.ytd-two-column-browse-results-renderer {
+            padding: inherit;
+        }
         :root {
-            --yt-spec-base-background: ytbgColor
+            --yt-spec-base-background: ytbgcolor
         }
     }
 
     /** Remove Shorts */
-    if removeShorts {
+    if remove-shorts {
         .ytGridShelfViewModelHost,
         ytd-rich-shelf-renderer[standard-shelf-margins][is-shorts],
         ytd-exploratory-results-renderer.ytd-item-section-renderer,
@@ -190,6 +190,13 @@
             margin: 0;
             padding: 0
         }
+        ytd-section-list-renderer {
+            margin-left:-13%;
+            padding-left: 10%
+        }
+        ytd-item-section-renderer {
+            width: auto
+        }
     }
 
     /** Panels & UI Tweaks */
@@ -197,6 +204,11 @@
         ytd-masthead:not([ai-companion-enabled]) #voice-search-button.ytd-masthead {
             margin-right: 10px;
             background-color: transparent
+        }
+        ytd-browse-feed-actions-renderer.ytd-two-column-browse-results-renderer {
+            width: 230%;
+            padding-right: 2.5vh;
+            padding-left: 2vh
         }
     }
     ytd-comment-view-model {
@@ -354,6 +366,9 @@
     #avatar,
     #avatar.ytd-active-account-header-renderer,
     #home-page-skeleton .channel-avatar,
+    #author-thumbnail.ytd-commentbox,
+    #author-thumbnail.ytd-comment-simplebox-renderer,
+    #author-thumbnail.ytd-comment-view-model yt-img-shadow.ytd-comment-view-model,
     .watch-skeleton #secondary-info #top-row #video-owner #channel-icon {
         border-radius: var(--avatar-corner-radius) !important
     }
